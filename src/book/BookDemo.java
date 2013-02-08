@@ -16,8 +16,8 @@ import java.io.InputStreamReader;
 public class BookDemo
 {
     private static final String HELP_MESSAGE =
-        "*** Commands: create, load, find <n>, add, delete, publishers, quit\n"+
-        "***           books, authors";
+        "*** Commands: create, load, find <n>, add, delete, quit\n"+
+        "***           books, authors, publishers, genres";
 
     public static void main(String args[])
     {

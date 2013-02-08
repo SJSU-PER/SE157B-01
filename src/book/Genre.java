@@ -15,6 +15,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Example;
 import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Restrictions;
 
 /**
  @author Team Cosmos:
@@ -149,6 +150,66 @@ public class Genre
                     books.getPublishedDate());
          }
       }
+   }
+   
+   public static String getList()
+   {
+      String list = "";
+      Session session = HibernateContext.getSession();
+      Criteria criteria = session.createCriteria(Genre.class);
+      criteria.addOrder(Order.asc("id"));
+      
+      List<Genre> genres = criteria.list();
+      list += "Titles by Genre:";
+      
+      for (Genre genre : genres)
+      {
+         list+= "\n \n" + genre.getId() + ". " + genre.getGenreName();
+         for (Book books : genre.getBooks())
+         {
+            list+= "\n" + books.getTitle() + " " + books.getPublishedDate();
+         }
+      }
+      return list;
+   }
+   
+   public static String getList(boolean typeToggle, String attribute, String findAttribute, String findValue)
+   {
+      String list = "";
+      Session session = HibernateContext.getSession();
+      Criteria criteria = session.createCriteria(Genre.class);
+      
+      //Do only if ordering was specified
+      if (attribute != null)
+      {
+        if (typeToggle)
+        {
+          criteria.addOrder(Order.asc(attribute));
+        }
+        else
+        {
+          criteria.addOrder(Order.desc(attribute));
+        }
+      }
+      
+      //Do only selection was specified
+      if (findAttribute != null && findValue != null)
+      {
+          criteria.add(Restrictions.like(findAttribute,"%"+findValue+"%"));
+      }
+      
+      List<Genre> genres = criteria.list();
+      list += "Titles by Genre:";
+      
+      for (Genre genre : genres)
+      {
+         list+= "\n \n" + genre.getId() + ". " + genre.getGenreName();
+         for (Book books : genre.getBooks())
+         {
+            list+= "\n" + books.getTitle() + " " + books.getPublishedDate();
+         }
+      }
+      return list;
    }
 
    /**

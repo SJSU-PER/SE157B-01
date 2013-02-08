@@ -19,6 +19,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Example;
 import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Restrictions;
 
 /**
  @author Team Cosmos:
@@ -304,6 +305,68 @@ public class Book
         }
     }
 
+   public static String getList()
+   {
+      String list = "";
+      Session session = HibernateContext.getSession();
+      Criteria criteria = session.createCriteria(Book.class);
+      criteria.addOrder(Order.asc("id"));
+      
+      List<Book> books = criteria.list();
+      list += "All Books:";
+      
+      for (Book book : books)
+      {
+         list+= "\n \n" + book.getId() + ". " + book.getTitle() + " " + 
+                 book.getPublishedDate() + " " + book.getIsbn();
+         for (Author author : book.getAuthors())
+         {
+            list+= "\n" + author.getFirstname() + " " + author.getLastname();
+         }
+      }
+      return list;
+   }
+   
+   public static String getList(boolean typeToggle, String attribute, String findAttribute, String findValue)
+   {
+      String list = "";
+      Session session = HibernateContext.getSession();
+      Criteria criteria = session.createCriteria(Book.class);
+      
+      //Do only if ordering was specified
+      if (attribute != null)
+      {
+        if (typeToggle)
+        {
+          criteria.addOrder(Order.asc(attribute));
+        }
+        else
+        {
+          criteria.addOrder(Order.desc(attribute));
+        }
+      }
+      
+      //Do only selection was specified
+      if (findAttribute != null && findValue != null)
+      {
+          criteria.add(Restrictions.like(findAttribute,"%"+findValue+"%"));
+      }
+      
+      List<Book> books = criteria.list();
+      list += "All Books:";
+      
+      for (Book book : books)
+      {
+         list+= "\n \n" + book.getId() + ". " + book.getTitle() + " " + 
+                 book.getPublishedDate() + " " + book.getIsbn();
+         for (Author author : book.getAuthors())
+         {
+            list+= "\n" + author.getFirstname() + " " + author.getLastname();
+         }
+      }
+      return list;
+   }
+   
     /**
      Prints the id, title, year, isbn number, and name of publishers for that
      book.

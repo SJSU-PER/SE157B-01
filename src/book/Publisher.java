@@ -15,6 +15,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Example;
 import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Restrictions;
 
 /**
  @author Team Cosmos:
@@ -129,6 +130,8 @@ public class Publisher
    {
       Session session = HibernateContext.getSession();
       Criteria criteria = session.createCriteria(Publisher.class);
+      
+      criteria.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
       criteria.addOrder(Order.asc("name"));
 
       List<Publisher> publishers = criteria.list();
@@ -148,6 +151,67 @@ public class Publisher
       }
    }
 
+   public static String getList()
+   {
+      String list = "";
+      Session session = HibernateContext.getSession();
+      Criteria criteria = session.createCriteria(Publisher.class);
+      criteria.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
+      criteria.addOrder(Order.asc("id"));
+      
+      List<Publisher> publishers = criteria.list();
+      list += "Titles that are published by publishers:";
+      
+      for (Publisher pub : publishers)
+      {
+         list+= "\n \n" + pub.getId() + ". " + pub.getName();
+         for (Book books : pub.getBooks())
+         {
+            list+= "\n" + books.getTitle() + " " + books.getPublishedDate();
+         }
+      }
+      return list;
+   }
+   
+   public static String getList(boolean typeToggle, String attribute, String findAttribute, String findValue)
+   {
+      String list = "";
+      Session session = HibernateContext.getSession();
+      Criteria criteria = session.createCriteria(Publisher.class);
+      criteria.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
+      
+      //Do only if ordering was specified
+      if (attribute != null)
+      {
+        if (typeToggle)
+        {
+          criteria.addOrder(Order.asc(attribute));
+        }
+        else
+        {
+          criteria.addOrder(Order.desc(attribute));
+        }
+      }
+      
+      //Do only selection was specified
+      if (findAttribute != null && findValue != null)
+      {
+          criteria.add(Restrictions.like(findAttribute,"%"+findValue+"%"));
+      }
+
+      List<Publisher> publishers = criteria.list();
+      list += "Titles that are published by publishers:";
+      
+      for (Publisher pub : publishers)
+      {
+         list+= "\n \n" + pub.getId() + ". " + pub.getName();
+         for (Book books : pub.getBooks())
+         {
+            list+= "\n" + books.getTitle() + " " + books.getPublishedDate();
+         }
+      }
+      return list;
+   }
    /**
     Print the id and name of the publishers.
    */
