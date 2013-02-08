@@ -148,7 +148,7 @@ public class Author
    {
       Session session = HibernateContext.getSession();
       Criteria criteria = session.createCriteria(Author.class);
-      criteria.addOrder(Order.asc("firstName"));
+      criteria.addOrder(Order.asc("firstname"));
 
       List<Author> authors = criteria.list();
       System.out.println("Titles that are written by Author.");
