@@ -130,7 +130,7 @@ public class Publisher
    {
       Session session = HibernateContext.getSession();
       Criteria criteria = session.createCriteria(Publisher.class);
-      
+
       criteria.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
       criteria.addOrder(Order.asc("name"));
 
