@@ -173,7 +173,8 @@ public class Publisher
       return list;
    }
 
-   public static String getList(boolean typeToggle, String attribute, String findAttribute, String findValue)
+   public static String getList(boolean typeToggle, String attribute,
+                                      String findAttribute, String findValue)
    {
       String list = "";
       Session session = HibernateContext.getSession();

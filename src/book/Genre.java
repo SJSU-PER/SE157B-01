@@ -167,13 +167,15 @@ public class Genre
          list+= "\n \n" + genre.getId() + ". " + genre.getGenreName();
          for (Book books : genre.getBooks())
          {
-            list+= "\n          " + books.getTitle() + " " + books.getPublishedDate();
+            list+= "\n          " + books.getTitle() + " "
+                    + books.getPublishedDate();
          }
       }
       return list;
    }
 
-   public static String getList(boolean typeToggle, String attribute, String findAttribute, String findValue)
+   public static String getList(boolean typeToggle, String attribute,
+                                        String findAttribute, String findValue)
    {
       String list = "";
       Session session = HibernateContext.getSession();

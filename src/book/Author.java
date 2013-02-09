@@ -180,7 +180,8 @@ public class Author
 
       for (Author author : authors)
       {
-         list+= "\n \n" + author.getId() + ". " + author.getFirstname() + " " + author.getLastname();
+         list+= "\n \n" + author.getId() + ". " + author.getFirstname()
+                 + " " + author.getLastname();
          for (Book books : author.getBooks())
          {
 
@@ -190,7 +191,8 @@ public class Author
       return list;
    }
 
-   public static String getList(boolean typeToggle, String attribute, String findAttribute, String findValue)
+   public static String getList(boolean typeToggle, String attribute,
+                                    String findAttribute, String findValue)
    {
       String list = "";
       Session session = HibernateContext.getSession();
@@ -220,7 +222,8 @@ public class Author
 
       for (Author author : authors)
       {
-         list+= "\n \n" + author.getId() + ". " + author.getFirstname() + " " + author.getLastname();
+         list+= "\n \n" + author.getId() + ". " + author.getFirstname()
+                 + " " + author.getLastname();
          for (Book books : author.getBooks())
          {
 

@@ -159,15 +159,16 @@ public class Book
                    new ISBN("9781451678628"));
         bagOfBones.setPublisher(pb);
 
-        Book lostHorizon = new Book("Lost Horizon", "1933", new ISBN("9781453239766"));
+        Book lostHorizon = new Book("Lost Horizon", "1933",
+                new ISBN("9781453239766"));
         lostHorizon.setPublisher(pb);
 
         Book bambi = new Book("Bambi: A Life in the Woods", "1923",
                 new ISBN("9780671666071"));
         bambi.setPublisher(pb);
 
-        Book databaseSystems = new Book("Database Systems, the Complete Book", "2008",
-                new ISBN("9780131873254"));
+        Book databaseSystems = new Book("Database Systems, the Complete Book",
+                "2008", new ISBN("9780131873254"));
         databaseSystems.setPublisher(pearson);
 
         Book mathBook = new Book("Algebra: Tools for a Changing World", "1998",
@@ -321,13 +322,15 @@ public class Book
                  book.getPublishedDate() + " | Isbn: " + isbn.getISBNNumber();
          for (Author author : book.getAuthors())
          {
-            list+= "\n        " + author.getFirstname() + " " + author.getLastname();
+            list+= "\n        " + author.getFirstname() + " "
+                    + author.getLastname();
          }
       }
       return list;
    }
 
-   public static String getList(boolean typeToggle, String attribute, String findAttribute, String findValue)
+   public static String getList(boolean typeToggle, String attribute,
+                                        String findAttribute, String findValue)
    {
       String list = "";
       Session session = HibernateContext.getSession();
