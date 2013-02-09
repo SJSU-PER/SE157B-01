@@ -167,35 +167,35 @@ public class Author
          }
       }
    }
-   
+
    public static String getList()
    {
       String list = "";
       Session session = HibernateContext.getSession();
       Criteria criteria = session.createCriteria(Author.class);
       criteria.addOrder(Order.asc("id"));
-      
+
       List<Author> authors = criteria.list();
       list += "Titles that are written by Authors:";
-      
+
       for (Author author : authors)
       {
          list+= "\n \n" + author.getId() + ". " + author.getFirstname() + " " + author.getLastname();
          for (Book books : author.getBooks())
          {
-            
-            list+= "\n" + books.getTitle() + " " + books.getPublishedDate();
+
+            list+= "\n       " + books.getTitle() + " " + books.getPublishedDate();
          }
       }
       return list;
    }
-   
+
    public static String getList(boolean typeToggle, String attribute, String findAttribute, String findValue)
    {
       String list = "";
       Session session = HibernateContext.getSession();
       Criteria criteria = session.createCriteria(Author.class);
-      
+
       //Do only if ordering was specified
       if (attribute != null)
       {
@@ -208,23 +208,23 @@ public class Author
           criteria.addOrder(Order.desc(attribute));
         }
       }
-      
+
       //Do only selection was specified
       if (findAttribute != null && findValue != null)
       {
           criteria.add(Restrictions.like(findAttribute,"%"+findValue+"%"));
       }
-      
+
       List<Author> authors = criteria.list();
       list += "Titles that are written by Authors:";
-      
+
       for (Author author : authors)
       {
          list+= "\n \n" + author.getId() + ". " + author.getFirstname() + " " + author.getLastname();
          for (Book books : author.getBooks())
          {
-            
-            list+= "\n" + books.getTitle() + " " + books.getPublishedDate();
+
+            list+= "\n      " + books.getTitle() + " " + books.getPublishedDate();
          }
       }
       return list;

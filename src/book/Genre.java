@@ -151,34 +151,34 @@ public class Genre
          }
       }
    }
-   
+
    public static String getList()
    {
       String list = "";
       Session session = HibernateContext.getSession();
       Criteria criteria = session.createCriteria(Genre.class);
       criteria.addOrder(Order.asc("id"));
-      
+
       List<Genre> genres = criteria.list();
       list += "Titles by Genre:";
-      
+
       for (Genre genre : genres)
       {
          list+= "\n \n" + genre.getId() + ". " + genre.getGenreName();
          for (Book books : genre.getBooks())
          {
-            list+= "\n" + books.getTitle() + " " + books.getPublishedDate();
+            list+= "\n          " + books.getTitle() + " " + books.getPublishedDate();
          }
       }
       return list;
    }
-   
+
    public static String getList(boolean typeToggle, String attribute, String findAttribute, String findValue)
    {
       String list = "";
       Session session = HibernateContext.getSession();
       Criteria criteria = session.createCriteria(Genre.class);
-      
+
       //Do only if ordering was specified
       if (attribute != null)
       {
@@ -191,16 +191,16 @@ public class Genre
           criteria.addOrder(Order.desc(attribute));
         }
       }
-      
+
       //Do only selection was specified
       if (findAttribute != null && findValue != null)
       {
           criteria.add(Restrictions.like(findAttribute,"%"+findValue+"%"));
       }
-      
+
       List<Genre> genres = criteria.list();
       list += "Titles by Genre:";
-      
+
       for (Genre genre : genres)
       {
          list+= "\n \n" + genre.getId() + ". " + genre.getGenreName();

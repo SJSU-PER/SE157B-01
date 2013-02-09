@@ -158,28 +158,28 @@ public class Publisher
       Criteria criteria = session.createCriteria(Publisher.class);
       criteria.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
       criteria.addOrder(Order.asc("id"));
-      
+
       List<Publisher> publishers = criteria.list();
       list += "Titles that are published by publishers:";
-      
+
       for (Publisher pub : publishers)
       {
          list+= "\n \n" + pub.getId() + ". " + pub.getName();
          for (Book books : pub.getBooks())
          {
-            list+= "\n" + books.getTitle() + " " + books.getPublishedDate();
+            list+= "\n       " + books.getTitle() + " " + books.getPublishedDate();
          }
       }
       return list;
    }
-   
+
    public static String getList(boolean typeToggle, String attribute, String findAttribute, String findValue)
    {
       String list = "";
       Session session = HibernateContext.getSession();
       Criteria criteria = session.createCriteria(Publisher.class);
       criteria.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
-      
+
       //Do only if ordering was specified
       if (attribute != null)
       {
@@ -192,7 +192,7 @@ public class Publisher
           criteria.addOrder(Order.desc(attribute));
         }
       }
-      
+
       //Do only selection was specified
       if (findAttribute != null && findValue != null)
       {
@@ -201,7 +201,7 @@ public class Publisher
 
       List<Publisher> publishers = criteria.list();
       list += "Titles that are published by publishers:";
-      
+
       for (Publisher pub : publishers)
       {
          list+= "\n \n" + pub.getId() + ". " + pub.getName();

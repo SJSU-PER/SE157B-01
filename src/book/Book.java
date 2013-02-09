@@ -317,11 +317,11 @@ public class Book
 
       for (Book book : books)
       {
-         list+= "\n \n" + book.getId() + ". " + book.getTitle() + " | Year:" +
-                 book.getPublishedDate() + " | Isbn:" + isbn.getISBNNumber();
+         list+= "\n \n" + book.getId() + ". " + book.getTitle() + " | Year: " +
+                 book.getPublishedDate() + " | Isbn: " + isbn.getISBNNumber();
          for (Author author : book.getAuthors())
          {
-            list+= "\n" + author.getFirstname() + " " + author.getLastname();
+            list+= "\n        " + author.getFirstname() + " " + author.getLastname();
          }
       }
       return list;
