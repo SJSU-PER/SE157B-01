@@ -49,13 +49,13 @@ public class Form extends javax.swing.JFrame
       jLabel4 = new javax.swing.JLabel();
       jRadioButton5 = new javax.swing.JRadioButton();
       jRadioButton6 = new javax.swing.JRadioButton();
-      jTextField1 = new javax.swing.JTextField();
       jLabel5 = new javax.swing.JLabel();
       jLabel6 = new javax.swing.JLabel();
       jLabel7 = new javax.swing.JLabel();
-      jTextField2 = new javax.swing.JTextField();
       jTextField3 = new javax.swing.JTextField();
       jLabel8 = new javax.swing.JLabel();
+      jComboBox1 = new javax.swing.JComboBox();
+      jComboBox2 = new javax.swing.JComboBox();
 
       setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -63,15 +63,43 @@ public class Form extends javax.swing.JFrame
 
       buttonGroup1.add(jRadioButton1);
       jRadioButton1.setText("Authors");
+      jRadioButton1.addActionListener(new java.awt.event.ActionListener()
+      {
+         public void actionPerformed(java.awt.event.ActionEvent evt)
+         {
+            jRadioButton1ActionPerformed(evt);
+         }
+      });
 
       buttonGroup1.add(jRadioButton2);
       jRadioButton2.setText("Publishers");
+      jRadioButton2.addActionListener(new java.awt.event.ActionListener()
+      {
+         public void actionPerformed(java.awt.event.ActionEvent evt)
+         {
+            jRadioButton2ActionPerformed(evt);
+         }
+      });
 
       buttonGroup1.add(jRadioButton3);
       jRadioButton3.setText("Books");
+      jRadioButton3.addActionListener(new java.awt.event.ActionListener()
+      {
+         public void actionPerformed(java.awt.event.ActionEvent evt)
+         {
+            jRadioButton3ActionPerformed(evt);
+         }
+      });
 
       buttonGroup1.add(jRadioButton4);
       jRadioButton4.setText("Genres");
+      jRadioButton4.addActionListener(new java.awt.event.ActionListener()
+      {
+         public void actionPerformed(java.awt.event.ActionEvent evt)
+         {
+            jRadioButton4ActionPerformed(evt);
+         }
+      });
 
       jLabel2.setText("Query By:");
 
@@ -97,15 +125,6 @@ public class Form extends javax.swing.JFrame
 
       buttonGroup2.add(jRadioButton6);
       jRadioButton6.setText("Descending");
-      jRadioButton6.setActionCommand("Descending");
-
-      jTextField1.addActionListener(new java.awt.event.ActionListener()
-      {
-         public void actionPerformed(java.awt.event.ActionEvent evt)
-         {
-            jTextField1ActionPerformed(evt);
-         }
-      });
 
       jLabel5.setText("Attribute:");
 
@@ -136,10 +155,6 @@ public class Form extends javax.swing.JFrame
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                            .addComponent(jRadioButton6)
                            .addGroup(layout.createSequentialGroup()
-                              .addComponent(jLabel5)
-                              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                              .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                           .addGroup(layout.createSequentialGroup()
                               .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                  .addComponent(jLabel4)
                                  .addComponent(jRadioButton5))
@@ -152,8 +167,12 @@ public class Form extends javax.swing.JFrame
                                        .addComponent(jLabel8))
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                       .addComponent(jTextField3)
-                                       .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE))))))
+                                       .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                                       .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                           .addGroup(layout.createSequentialGroup()
+                              .addComponent(jLabel5)
+                              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                              .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 376, Short.MAX_VALUE))
                      .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -181,7 +200,7 @@ public class Form extends javax.swing.JFrame
                .addComponent(jRadioButton1)
                .addComponent(jRadioButton5)
                .addComponent(jLabel7)
-               .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+               .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                .addComponent(jRadioButton2)
@@ -191,13 +210,13 @@ public class Form extends javax.swing.JFrame
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                .addComponent(jRadioButton3)
-               .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-               .addComponent(jLabel5))
+               .addComponent(jLabel5)
+               .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(jRadioButton4)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
             .addComponent(jButton1)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
             .addComponent(jLabel3)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -216,44 +235,44 @@ public class Form extends javax.swing.JFrame
         if (jRadioButton1.isSelected())
         {
             //If Ascending is selected and attribute to ascend by is specified
-            if (jRadioButton5.isSelected() && !jTextField1.getText().isEmpty())
+            if (jRadioButton5.isSelected() && jComboBox1.getSelectedIndex() > 0)
             {
                 //Sort All Authors
-                if (jTextField2.getText().isEmpty() || jTextField3.getText().isEmpty())
+                if (jComboBox2.getSelectedIndex() == 0 || jTextField3.getText().isEmpty())
                 {
-                    jTextArea1.setText(Author.getList(true, jTextField1.getText(), null, null));
+                    jTextArea1.setText(Author.getList(true, (String)jComboBox1.getSelectedItem(), null, null));
                 }
 
                 //Sort Authors that fall under the query
                 else
                 {
-                    jTextArea1.setText(Author.getList(true, jTextField1.getText(), jTextField2.getText(), jTextField3.getText()));
+                    jTextArea1.setText(Author.getList(true, (String)jComboBox1.getSelectedItem(), (String)jComboBox2.getSelectedItem(), jTextField3.getText()));
                 }
             }
 
             //If Descending is selected and attribute to descend by is specified
-            else if (jRadioButton6.isSelected() && !jTextField1.getText().isEmpty())
+            else if (jRadioButton6.isSelected() && jComboBox1.getSelectedIndex() > 0)
             {
                 //Sort All Authors
-                if (jTextField2.getText().isEmpty() || jTextField3.getText().isEmpty())
+                if (jComboBox2.getSelectedIndex() == 0 || jTextField3.getText().isEmpty())
                 {
-                    jTextArea1.setText(Author.getList(false, jTextField1.getText(), null, null));
+                    jTextArea1.setText(Author.getList(false, (String)jComboBox1.getSelectedItem(), null, null));
                 }
 
                 //Sort Authors that fall under the query
                 else
                 {
-                    jTextArea1.setText(Author.getList(false, jTextField1.getText(), jTextField2.getText(), jTextField3.getText()));
+                    jTextArea1.setText(Author.getList(false, (String)jComboBox1.getSelectedItem(), (String)jComboBox2.getSelectedItem(), jTextField3.getText()));
                 }
             }
 
 
-            else if (!jRadioButton5.isSelected() && !jRadioButton6.isSelected() || jTextField1.getText().isEmpty())
+            else if (!jRadioButton5.isSelected() && !jRadioButton6.isSelected() || jComboBox1.getSelectedIndex() == 0)
             {
                 //Show authors that fall under query, but no sorting specified
-                if (!jTextField2.getText().isEmpty() && !jTextField3.getText().isEmpty())
+                if (jComboBox2.getSelectedIndex() > 0 && !jTextField3.getText().isEmpty())
                 {
-                    jTextArea1.setText(Author.getList(false, null, jTextField2.getText(), jTextField3.getText()));
+                    jTextArea1.setText(Author.getList(false, null, (String)jComboBox2.getSelectedItem(), jTextField3.getText()));
                 }
                 //Show all authors
                 else
@@ -268,44 +287,44 @@ public class Form extends javax.swing.JFrame
         else if(jRadioButton2.isSelected())
         {
             //If Ascending is selected and attribute to ascend by is specified
-            if (jRadioButton5.isSelected() && !jTextField1.getText().isEmpty())
+            if (jRadioButton5.isSelected() && jComboBox1.getSelectedIndex() > 0)
             {
                 //Sort All Publishers
-                if (jTextField2.getText().isEmpty() || jTextField3.getText().isEmpty())
+                if (jComboBox2.getSelectedIndex() == 0 || jTextField3.getText().isEmpty())
                 {
-                    jTextArea1.setText(Publisher.getList(true, jTextField1.getText(), null, null));
+                    jTextArea1.setText(Publisher.getList(true, (String)jComboBox1.getSelectedItem(), null, null));
                 }
 
                 //Sort Publishers that fall under the query
                 else
                 {
-                    jTextArea1.setText(Publisher.getList(true, jTextField1.getText(), jTextField2.getText(), jTextField3.getText()));
+                    jTextArea1.setText(Publisher.getList(true, (String)jComboBox1.getSelectedItem(), (String)jComboBox2.getSelectedItem(), jTextField3.getText()));
                 }
             }
 
             //If Descending is selected and attribute to descend by is specified
-            else if (jRadioButton6.isSelected() && !jTextField1.getText().isEmpty())
+            else if (jRadioButton6.isSelected() && jComboBox1.getSelectedIndex() > 0)
             {
                 //Sort All Publishers
-                if (jTextField2.getText().isEmpty() || jTextField3.getText().isEmpty())
+                if (jComboBox2.getSelectedIndex() == 0 || jTextField3.getText().isEmpty())
                 {
-                    jTextArea1.setText(Publisher.getList(false, jTextField1.getText(), null, null));
+                    jTextArea1.setText(Publisher.getList(false, (String)jComboBox1.getSelectedItem(), null, null));
                 }
 
                 //Sort Publishers that fall under the query
                 else
                 {
-                    jTextArea1.setText(Publisher.getList(false, jTextField1.getText(), jTextField2.getText(), jTextField3.getText()));
+                    jTextArea1.setText(Publisher.getList(false, (String)jComboBox1.getSelectedItem(), (String)jComboBox2.getSelectedItem(), jTextField3.getText()));
                 }
             }
 
 
-            else if (!jRadioButton5.isSelected() && !jRadioButton6.isSelected() || jTextField1.getText().isEmpty())
+            else if (!jRadioButton5.isSelected() && !jRadioButton6.isSelected() || jComboBox1.getSelectedIndex() == 0)
             {
                 //Show publishers that fall under query, but no sorting specified
-                if (!jTextField2.getText().isEmpty() && !jTextField3.getText().isEmpty())
+                if (jComboBox2.getSelectedIndex() > 0 && !jTextField3.getText().isEmpty())
                 {
-                    jTextArea1.setText(Publisher.getList(false, null, jTextField2.getText(), jTextField3.getText()));
+                    jTextArea1.setText(Publisher.getList(false, null, (String)jComboBox2.getSelectedItem(), jTextField3.getText()));
                 }
                 //Show all publishers
                 else
@@ -319,44 +338,44 @@ public class Form extends javax.swing.JFrame
         else if(jRadioButton3.isSelected())
         {
             //If Ascending is selected and attribute to ascend by is specified
-            if (jRadioButton5.isSelected() && !jTextField1.getText().isEmpty())
+            if (jRadioButton5.isSelected() && jComboBox1.getSelectedIndex() > 0)
             {
                 //Sort All Books
-                if (jTextField2.getText().isEmpty() || jTextField3.getText().isEmpty())
+                if (jComboBox2.getSelectedIndex() == 0 || jTextField3.getText().isEmpty())
                 {
-                    jTextArea1.setText(Book.getList(true, jTextField1.getText(), null, null));
+                    jTextArea1.setText(Book.getList(true, (String)jComboBox1.getSelectedItem(), null, null));
                 }
 
                 //Sort Books that fall under the query
                 else
                 {
-                    jTextArea1.setText(Book.getList(true, jTextField1.getText(), jTextField2.getText(), jTextField3.getText()));
+                    jTextArea1.setText(Book.getList(true, (String)jComboBox1.getSelectedItem(), (String)jComboBox2.getSelectedItem(), jTextField3.getText()));
                 }
             }
 
             //If Descending is selected and attribute to descend by is specified
-            else if (jRadioButton6.isSelected() && !jTextField1.getText().isEmpty())
+            else if (jRadioButton6.isSelected() && jComboBox1.getSelectedIndex() > 0)
             {
                 //Sort All Books
-                if (jTextField2.getText().isEmpty() || jTextField3.getText().isEmpty())
+                if (jComboBox2.getSelectedIndex() == 0 || jTextField3.getText().isEmpty())
                 {
-                    jTextArea1.setText(Book.getList(false, jTextField1.getText(), null, null));
+                    jTextArea1.setText(Book.getList(false, (String)jComboBox1.getSelectedItem(), null, null));
                 }
 
                 //Sort Books that fall under the query
                 else
                 {
-                    jTextArea1.setText(Book.getList(false, jTextField1.getText(), jTextField2.getText(), jTextField3.getText()));
+                    jTextArea1.setText(Book.getList(false, (String)jComboBox1.getSelectedItem(), (String)jComboBox2.getSelectedItem(), jTextField3.getText()));
                 }
             }
 
 
-            else if (!jRadioButton5.isSelected() && !jRadioButton6.isSelected() || jTextField1.getText().isEmpty())
+            else if (!jRadioButton5.isSelected() && !jRadioButton6.isSelected() || jComboBox1.getSelectedIndex() == 0)
             {
                 //Show authors that fall under query, but no sorting specified
-                if (!jTextField2.getText().isEmpty() && !jTextField3.getText().isEmpty())
+                if (jComboBox2.getSelectedIndex() > 0 && !jTextField3.getText().isEmpty())
                 {
-                    jTextArea1.setText(Book.getList(false, null, jTextField2.getText(), jTextField3.getText()));
+                    jTextArea1.setText(Book.getList(false, null, (String)jComboBox2.getSelectedItem(), jTextField3.getText()));
                 }
                 //Show all authors
                 else
@@ -370,44 +389,44 @@ public class Form extends javax.swing.JFrame
         else if(jRadioButton4.isSelected())
         {
             //If Ascending is selected and attribute to ascend by is specified
-            if (jRadioButton5.isSelected() && !jTextField1.getText().isEmpty())
+            if (jRadioButton5.isSelected() && jComboBox1.getSelectedIndex() > 0)
             {
                 //Sort All Genres
-                if (jTextField2.getText().isEmpty() || jTextField3.getText().isEmpty())
+                if (jComboBox2.getSelectedIndex() == 0 || jTextField3.getText().isEmpty())
                 {
-                    jTextArea1.setText(Genre.getList(true, jTextField1.getText(), null, null));
+                    jTextArea1.setText(Genre.getList(true, (String)jComboBox1.getSelectedItem(), null, null));
                 }
 
                 //Sort Genres that fall under the query
                 else
                 {
-                    jTextArea1.setText(Genre.getList(true, jTextField1.getText(), jTextField2.getText(), jTextField3.getText()));
+                    jTextArea1.setText(Genre.getList(true, (String)jComboBox1.getSelectedItem(), (String)jComboBox2.getSelectedItem(), jTextField3.getText()));
                 }
             }
 
             //If Descending is selected and attribute to descend by is specified
-            else if (jRadioButton6.isSelected() && !jTextField1.getText().isEmpty())
+            else if (jRadioButton6.isSelected() && jComboBox1.getSelectedIndex() > 0)
             {
                 //Sort All Genres
-                if (jTextField2.getText().isEmpty() || jTextField3.getText().isEmpty())
+                if (jComboBox2.getSelectedIndex() == 0 || jTextField3.getText().isEmpty())
                 {
-                    jTextArea1.setText(Genre.getList(false, jTextField1.getText(), null, null));
+                    jTextArea1.setText(Genre.getList(false, (String)jComboBox1.getSelectedItem(), null, null));
                 }
 
                 //Sort Genres that fall under the query
                 else
                 {
-                    jTextArea1.setText(Genre.getList(false, jTextField1.getText(), jTextField2.getText(), jTextField3.getText()));
+                    jTextArea1.setText(Genre.getList(false, (String)jComboBox1.getSelectedItem(), (String)jComboBox2.getSelectedItem(), jTextField3.getText()));
                 }
             }
 
 
-            else if (!jRadioButton5.isSelected() && !jRadioButton6.isSelected() || jTextField1.getText().isEmpty())
+            else if (!jRadioButton5.isSelected() && !jRadioButton6.isSelected() || jComboBox1.getSelectedIndex() == 0)
             {
                 //Show Genres that fall under query, but no sorting specified
-                if (!jTextField2.getText().isEmpty() && !jTextField3.getText().isEmpty())
+                if (jComboBox2.getSelectedIndex() > 0 && !jTextField3.getText().isEmpty())
                 {
-                    jTextArea1.setText(Genre.getList(false, null, jTextField2.getText(), jTextField3.getText()));
+                    jTextArea1.setText(Genre.getList(false, null, (String)jComboBox2.getSelectedItem(), jTextField3.getText()));
                 }
                 //Show all Genres
                 else
@@ -423,10 +442,85 @@ public class Form extends javax.swing.JFrame
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
-   private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jTextField1ActionPerformed
-   {//GEN-HEADEREND:event_jTextField1ActionPerformed
-      // TODO add your handling code here:
-   }//GEN-LAST:event_jTextField1ActionPerformed
+   private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jRadioButton1ActionPerformed
+   {//GEN-HEADEREND:event_jRadioButton1ActionPerformed
+      //if Author is selected
+      if(jRadioButton1.isSelected())
+      {
+         jComboBox1.setEditable(true);
+         jComboBox1.removeAllItems();
+         jComboBox1.addItem("");
+         jComboBox1.addItem("id");
+         jComboBox1.addItem("firstname");
+         jComboBox1.addItem("lastname");
+
+         jComboBox2.setEditable(true);
+         jComboBox2.removeAllItems();
+         jComboBox2.addItem("");
+         jComboBox2.addItem("id");
+         jComboBox2.addItem("firstname");
+         jComboBox2.addItem("lastname");
+      }
+   }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+   private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jRadioButton2ActionPerformed
+   {//GEN-HEADEREND:event_jRadioButton2ActionPerformed
+      //If Publishers is selected
+      if(jRadioButton2.isSelected())
+      {
+         jComboBox1.setEditable(true);
+         jComboBox1.removeAllItems();
+         jComboBox1.addItem("");
+         jComboBox1.addItem("id");
+         jComboBox1.addItem("name");
+
+         jComboBox2.setEditable(true);
+         jComboBox2.removeAllItems();
+         jComboBox2.addItem("");
+         jComboBox2.addItem("id");
+         jComboBox2.addItem("name");
+      }
+   }//GEN-LAST:event_jRadioButton2ActionPerformed
+
+   private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jRadioButton3ActionPerformed
+   {//GEN-HEADEREND:event_jRadioButton3ActionPerformed
+      //if books is selected
+      if(jRadioButton3.isSelected())
+      {
+         jComboBox1.setEditable(true);
+         jComboBox1.removeAllItems();
+         jComboBox1.addItem("");
+         jComboBox1.addItem("id");
+         jComboBox1.addItem("publishedDate");
+         jComboBox1.addItem("title");
+
+         jComboBox2.setEditable(true);
+         jComboBox2.removeAllItems();
+         jComboBox2.addItem("");
+         jComboBox2.addItem("id");
+         jComboBox2.addItem("publishedDate");
+         jComboBox2.addItem("title");
+      }
+   }//GEN-LAST:event_jRadioButton3ActionPerformed
+
+   private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jRadioButton4ActionPerformed
+   {//GEN-HEADEREND:event_jRadioButton4ActionPerformed
+      //if genres is selected
+      if(jRadioButton4.isSelected())
+      {
+         jComboBox1.setEditable(true);
+         jComboBox1.removeAllItems();
+         jComboBox1.addItem("");
+         jComboBox1.addItem("id");
+         jComboBox1.addItem("genreName");
+
+         jComboBox2.setEditable(true);
+         jComboBox2.removeAllItems();
+         jComboBox2.addItem("");
+         jComboBox2.addItem("id");
+         jComboBox2.addItem("genreName");
+      }
+   }//GEN-LAST:event_jRadioButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -487,6 +581,8 @@ public class Form extends javax.swing.JFrame
    private javax.swing.ButtonGroup buttonGroup1;
    private javax.swing.ButtonGroup buttonGroup2;
    private javax.swing.JButton jButton1;
+   private javax.swing.JComboBox jComboBox1;
+   private javax.swing.JComboBox jComboBox2;
    private javax.swing.JLabel jLabel1;
    private javax.swing.JLabel jLabel2;
    private javax.swing.JLabel jLabel3;
@@ -503,8 +599,6 @@ public class Form extends javax.swing.JFrame
    private javax.swing.JRadioButton jRadioButton6;
    private javax.swing.JScrollPane jScrollPane1;
    private javax.swing.JTextArea jTextArea1;
-   private javax.swing.JTextField jTextField1;
-   private javax.swing.JTextField jTextField2;
    private javax.swing.JTextField jTextField3;
    // End of variables declaration//GEN-END:variables
 }
