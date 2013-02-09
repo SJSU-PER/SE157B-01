@@ -36,103 +36,103 @@ public class Form extends javax.swing.JFrame
 
       buttonGroup1 = new javax.swing.ButtonGroup();
       buttonGroup2 = new javax.swing.ButtonGroup();
-      jLabel1 = new javax.swing.JLabel();
-      jRadioButton1 = new javax.swing.JRadioButton();
-      jRadioButton2 = new javax.swing.JRadioButton();
-      jRadioButton3 = new javax.swing.JRadioButton();
-      jRadioButton4 = new javax.swing.JRadioButton();
-      jLabel2 = new javax.swing.JLabel();
-      jButton1 = new javax.swing.JButton();
+      libTitle = new javax.swing.JLabel();
+      authorRadButton = new javax.swing.JRadioButton();
+      publisherRadButton = new javax.swing.JRadioButton();
+      bookRadButton = new javax.swing.JRadioButton();
+      genreRadButton = new javax.swing.JRadioButton();
+      queryByLabel = new javax.swing.JLabel();
+      queryButton = new javax.swing.JButton();
       jScrollPane1 = new javax.swing.JScrollPane();
-      jTextArea1 = new javax.swing.JTextArea();
-      jLabel3 = new javax.swing.JLabel();
-      jLabel4 = new javax.swing.JLabel();
-      jRadioButton5 = new javax.swing.JRadioButton();
-      jRadioButton6 = new javax.swing.JRadioButton();
-      jLabel5 = new javax.swing.JLabel();
-      jLabel6 = new javax.swing.JLabel();
-      jLabel7 = new javax.swing.JLabel();
-      jTextField3 = new javax.swing.JTextField();
-      jLabel8 = new javax.swing.JLabel();
-      jComboBox1 = new javax.swing.JComboBox();
-      jComboBox2 = new javax.swing.JComboBox();
+      resultArea = new javax.swing.JTextArea();
+      outputLabel = new javax.swing.JLabel();
+      sortByLabel = new javax.swing.JLabel();
+      sortAscRadButton = new javax.swing.JRadioButton();
+      sortDescRadButton = new javax.swing.JRadioButton();
+      sortAttrLabel = new javax.swing.JLabel();
+      searchByLabel = new javax.swing.JLabel();
+      searchAttrLabel = new javax.swing.JLabel();
+      searchValue = new javax.swing.JTextField();
+      searchValueLabel = new javax.swing.JLabel();
+      sortAttr = new javax.swing.JComboBox();
+      searchAttr = new javax.swing.JComboBox();
 
       setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-      jLabel1.setText("Library Query System");
+      libTitle.setText("Library Query System");
 
-      buttonGroup1.add(jRadioButton1);
-      jRadioButton1.setText("Authors");
-      jRadioButton1.addActionListener(new java.awt.event.ActionListener()
+      buttonGroup1.add(authorRadButton);
+      authorRadButton.setText("Authors");
+      authorRadButton.addActionListener(new java.awt.event.ActionListener()
       {
          public void actionPerformed(java.awt.event.ActionEvent evt)
          {
-            jRadioButton1ActionPerformed(evt);
+            authorRadButtonActionPerformed(evt);
          }
       });
 
-      buttonGroup1.add(jRadioButton2);
-      jRadioButton2.setText("Publishers");
-      jRadioButton2.addActionListener(new java.awt.event.ActionListener()
+      buttonGroup1.add(publisherRadButton);
+      publisherRadButton.setText("Publishers");
+      publisherRadButton.addActionListener(new java.awt.event.ActionListener()
       {
          public void actionPerformed(java.awt.event.ActionEvent evt)
          {
-            jRadioButton2ActionPerformed(evt);
+            publisherRadButtonActionPerformed(evt);
          }
       });
 
-      buttonGroup1.add(jRadioButton3);
-      jRadioButton3.setText("Books");
-      jRadioButton3.addActionListener(new java.awt.event.ActionListener()
+      buttonGroup1.add(bookRadButton);
+      bookRadButton.setText("Books");
+      bookRadButton.addActionListener(new java.awt.event.ActionListener()
       {
          public void actionPerformed(java.awt.event.ActionEvent evt)
          {
-            jRadioButton3ActionPerformed(evt);
+            bookRadButtonActionPerformed(evt);
          }
       });
 
-      buttonGroup1.add(jRadioButton4);
-      jRadioButton4.setText("Genres");
-      jRadioButton4.addActionListener(new java.awt.event.ActionListener()
+      buttonGroup1.add(genreRadButton);
+      genreRadButton.setText("Genres");
+      genreRadButton.addActionListener(new java.awt.event.ActionListener()
       {
          public void actionPerformed(java.awt.event.ActionEvent evt)
          {
-            jRadioButton4ActionPerformed(evt);
+            genreRadButtonActionPerformed(evt);
          }
       });
 
-      jLabel2.setText("Query By:");
+      queryByLabel.setText("Query By:");
 
-      jButton1.setText("Query");
-      jButton1.addActionListener(new java.awt.event.ActionListener()
+      queryButton.setText("Query");
+      queryButton.addActionListener(new java.awt.event.ActionListener()
       {
          public void actionPerformed(java.awt.event.ActionEvent evt)
          {
-            jButton1ActionPerformed(evt);
+            queryButtonActionPerformed(evt);
          }
       });
 
-      jTextArea1.setColumns(20);
-      jTextArea1.setRows(5);
-      jScrollPane1.setViewportView(jTextArea1);
+      resultArea.setColumns(20);
+      resultArea.setRows(5);
+      jScrollPane1.setViewportView(resultArea);
 
-      jLabel3.setText("Output:");
+      outputLabel.setText("Output:");
 
-      jLabel4.setText("Sort By:");
+      sortByLabel.setText("Sort By:");
 
-      buttonGroup2.add(jRadioButton5);
-      jRadioButton5.setText("Ascending");
+      buttonGroup2.add(sortAscRadButton);
+      sortAscRadButton.setText("Ascending");
 
-      buttonGroup2.add(jRadioButton6);
-      jRadioButton6.setText("Descending");
+      buttonGroup2.add(sortDescRadButton);
+      sortDescRadButton.setText("Descending");
 
-      jLabel5.setText("Attribute:");
+      sortAttrLabel.setText("Attribute:");
 
-      jLabel6.setText("Search By:");
+      searchByLabel.setText("Search By:");
 
-      jLabel7.setText("Attribute:");
+      searchAttrLabel.setText("Attribute:");
 
-      jLabel8.setText("Value:");
+      searchValueLabel.setText("Value:");
 
       javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
       getContentPane().setLayout(layout);
@@ -143,355 +143,355 @@ public class Form extends javax.swing.JFrame
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                .addGroup(layout.createSequentialGroup()
                   .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                     .addComponent(jRadioButton4)
-                     .addComponent(jRadioButton3)
-                     .addComponent(jRadioButton2)
-                     .addComponent(jRadioButton1)
-                     .addComponent(jLabel2)
-                     .addComponent(jButton1))
+                     .addComponent(genreRadButton)
+                     .addComponent(bookRadButton)
+                     .addComponent(publisherRadButton)
+                     .addComponent(authorRadButton)
+                     .addComponent(queryByLabel)
+                     .addComponent(queryButton))
                   .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                      .addGroup(layout.createSequentialGroup()
                         .addGap(61, 61, 61)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                           .addComponent(jRadioButton6)
+                           .addComponent(sortDescRadButton)
                            .addGroup(layout.createSequentialGroup()
                               .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                 .addComponent(jLabel4)
-                                 .addComponent(jRadioButton5))
+                                 .addComponent(sortByLabel)
+                                 .addComponent(sortAscRadButton))
                               .addGap(130, 130, 130)
                               .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                 .addComponent(jLabel6)
+                                 .addComponent(searchByLabel)
                                  .addGroup(layout.createSequentialGroup()
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                       .addComponent(jLabel7)
-                                       .addComponent(jLabel8))
+                                       .addComponent(searchAttrLabel)
+                                       .addComponent(searchValueLabel))
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                       .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
-                                       .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                       .addComponent(searchValue, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                                       .addComponent(searchAttr, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                            .addGroup(layout.createSequentialGroup()
-                              .addComponent(jLabel5)
+                              .addComponent(sortAttrLabel)
                               .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                              .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                              .addComponent(sortAttr, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 376, Short.MAX_VALUE))
                      .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                            .addComponent(jScrollPane1)
                            .addGroup(layout.createSequentialGroup()
-                              .addComponent(jLabel3)
+                              .addComponent(outputLabel)
                               .addGap(0, 793, Short.MAX_VALUE))))))
                .addGroup(layout.createSequentialGroup()
-                  .addComponent(jLabel1)
+                  .addComponent(libTitle)
                   .addGap(27, 27, 27))))
       );
       layout.setVerticalGroup(
          layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
          .addGroup(layout.createSequentialGroup()
             .addContainerGap()
-            .addComponent(jLabel1)
+            .addComponent(libTitle)
             .addGap(23, 23, 23)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-               .addComponent(jLabel2)
-               .addComponent(jLabel4)
-               .addComponent(jLabel6))
+               .addComponent(queryByLabel)
+               .addComponent(sortByLabel)
+               .addComponent(searchByLabel))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-               .addComponent(jRadioButton1)
-               .addComponent(jRadioButton5)
-               .addComponent(jLabel7)
-               .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+               .addComponent(authorRadButton)
+               .addComponent(sortAscRadButton)
+               .addComponent(searchAttrLabel)
+               .addComponent(searchAttr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-               .addComponent(jRadioButton2)
-               .addComponent(jRadioButton6)
-               .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-               .addComponent(jLabel8))
+               .addComponent(publisherRadButton)
+               .addComponent(sortDescRadButton)
+               .addComponent(searchValue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+               .addComponent(searchValueLabel))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-               .addComponent(jRadioButton3)
-               .addComponent(jLabel5)
-               .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+               .addComponent(bookRadButton)
+               .addComponent(sortAttrLabel)
+               .addComponent(sortAttr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(jRadioButton4)
+            .addComponent(genreRadButton)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-            .addComponent(jButton1)
+            .addComponent(queryButton)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
-            .addComponent(jLabel3)
+            .addComponent(outputLabel)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addContainerGap())
       );
 
-      jLabel1.getAccessibleContext().setAccessibleName("jLabel1");
+      libTitle.getAccessibleContext().setAccessibleName("jLabel1");
 
       pack();
    }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void queryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_queryButtonActionPerformed
 
         //----------------------Author---------------------------------------------------------------
         try {
-        if (jRadioButton1.isSelected())
+        if (authorRadButton.isSelected())
         {
             //If Ascending is selected and attribute to ascend by is specified
-            if (jRadioButton5.isSelected()
-                    && jComboBox1.getSelectedIndex() > 0)
+            if (sortAscRadButton.isSelected()
+                    && sortAttr.getSelectedIndex() > 0)
             {
                 //Sort All Authors
-                if (jComboBox2.getSelectedIndex() == 0 || jTextField3.getText().isEmpty())
+                if (searchAttr.getSelectedIndex() == 0 || searchValue.getText().isEmpty())
                 {
-                    jTextArea1.setText(Author.getList(true,
-                            (String)jComboBox1.getSelectedItem(), null, null));
+                    resultArea.setText(Author.getList(true,
+                            (String)sortAttr.getSelectedItem(), null, null));
                 }
 
                 //Sort Authors that fall under the query
                 else
                 {
-                    jTextArea1.setText(Author.getList(true,
-                            (String)jComboBox1.getSelectedItem(),
-                            (String)jComboBox2.getSelectedItem(),
-                            jTextField3.getText()));
+                    resultArea.setText(Author.getList(true,
+                            (String)sortAttr.getSelectedItem(),
+                            (String)searchAttr.getSelectedItem(),
+                            searchValue.getText()));
                 }
             }
 
             //If Descending is selected and attribute to descend by is specified
-            else if (jRadioButton6.isSelected()
-                    && jComboBox1.getSelectedIndex() > 0)
+            else if (sortDescRadButton.isSelected()
+                    && sortAttr.getSelectedIndex() > 0)
             {
                 //Sort All Authors
-                if (jComboBox2.getSelectedIndex() == 0
-                        || jTextField3.getText().isEmpty())
+                if (searchAttr.getSelectedIndex() == 0
+                        || searchValue.getText().isEmpty())
                 {
-                    jTextArea1.setText(Author.getList(false,
-                            (String)jComboBox1.getSelectedItem(), null, null));
+                    resultArea.setText(Author.getList(false,
+                            (String)sortAttr.getSelectedItem(), null, null));
                 }
 
                 //Sort Authors that fall under the query
                 else
                 {
-                    jTextArea1.setText(Author.getList(false,
-                            (String)jComboBox1.getSelectedItem(),
-                            (String)jComboBox2.getSelectedItem(),
-                            jTextField3.getText()));
+                    resultArea.setText(Author.getList(false,
+                            (String)sortAttr.getSelectedItem(),
+                            (String)searchAttr.getSelectedItem(),
+                            searchValue.getText()));
                 }
             }
 
 
-            else if (!jRadioButton5.isSelected() && !jRadioButton6.isSelected()
-                    || jComboBox1.getSelectedIndex() == 0)
+            else if (!sortAscRadButton.isSelected() && !sortDescRadButton.isSelected()
+                    || sortAttr.getSelectedIndex() == 0)
             {
                 //Show authors that fall under query, but no sorting specified
-                if (jComboBox2.getSelectedIndex() > 0
-                        && !jTextField3.getText().isEmpty())
+                if (searchAttr.getSelectedIndex() > 0
+                        && !searchValue.getText().isEmpty())
                 {
-                    jTextArea1.setText(Author.getList(false, null,
-                            (String)jComboBox2.getSelectedItem(),
-                            jTextField3.getText()));
+                    resultArea.setText(Author.getList(false, null,
+                            (String)searchAttr.getSelectedItem(),
+                            searchValue.getText()));
                 }
                 //Show all authors
                 else
                 {
-                    jTextArea1.setText(Author.getList());
+                    resultArea.setText(Author.getList());
                 }
             }
 
         }
 
         //----------------------Publisher--------------------------
-        else if(jRadioButton2.isSelected())
+        else if(publisherRadButton.isSelected())
         {
             //If Ascending is selected and attribute to ascend by is specified
-            if (jRadioButton5.isSelected() && jComboBox1.getSelectedIndex() > 0)
+            if (sortAscRadButton.isSelected() && sortAttr.getSelectedIndex() > 0)
             {
                 //Sort All Publishers
-                if (jComboBox2.getSelectedIndex() == 0
-                        || jTextField3.getText().isEmpty())
+                if (searchAttr.getSelectedIndex() == 0
+                        || searchValue.getText().isEmpty())
                 {
-                    jTextArea1.setText(Publisher.getList(true,
-                            (String)jComboBox1.getSelectedItem(), null, null));
+                    resultArea.setText(Publisher.getList(true,
+                            (String)sortAttr.getSelectedItem(), null, null));
                 }
 
                 //Sort Publishers that fall under the query
                 else
                 {
-                    jTextArea1.setText(Publisher.getList(true,
-                            (String)jComboBox1.getSelectedItem(),
-                            (String)jComboBox2.getSelectedItem(),
-                            jTextField3.getText()));
+                    resultArea.setText(Publisher.getList(true,
+                            (String)sortAttr.getSelectedItem(),
+                            (String)searchAttr.getSelectedItem(),
+                            searchValue.getText()));
                 }
             }
 
             //If Descending is selected and attribute to descend by is specified
-            else if (jRadioButton6.isSelected()
-                    && jComboBox1.getSelectedIndex() > 0)
+            else if (sortDescRadButton.isSelected()
+                    && sortAttr.getSelectedIndex() > 0)
             {
                 //Sort All Publishers
-                if (jComboBox2.getSelectedIndex() == 0
-                        || jTextField3.getText().isEmpty())
+                if (searchAttr.getSelectedIndex() == 0
+                        || searchValue.getText().isEmpty())
                 {
-                    jTextArea1.setText(Publisher.getList(false,
-                            (String)jComboBox1.getSelectedItem(), null, null));
+                    resultArea.setText(Publisher.getList(false,
+                            (String)sortAttr.getSelectedItem(), null, null));
                 }
 
                 //Sort Publishers that fall under the query
                 else
                 {
-                    jTextArea1.setText(Publisher.getList(false,
-                            (String)jComboBox1.getSelectedItem(),
-                            (String)jComboBox2.getSelectedItem(),
-                            jTextField3.getText()));
+                    resultArea.setText(Publisher.getList(false,
+                            (String)sortAttr.getSelectedItem(),
+                            (String)searchAttr.getSelectedItem(),
+                            searchValue.getText()));
                 }
             }
 
 
-            else if (!jRadioButton5.isSelected() && !jRadioButton6.isSelected()
-                    || jComboBox1.getSelectedIndex() == 0)
+            else if (!sortAscRadButton.isSelected() && !sortDescRadButton.isSelected()
+                    || sortAttr.getSelectedIndex() == 0)
             {
                 //Show publishers that fall under query, but no sorting specified
-                if (jComboBox2.getSelectedIndex() > 0
-                        && !jTextField3.getText().isEmpty())
+                if (searchAttr.getSelectedIndex() > 0
+                        && !searchValue.getText().isEmpty())
                 {
-                    jTextArea1.setText(Publisher.getList(false, null,
-                            (String)jComboBox2.getSelectedItem(),
-                            jTextField3.getText()));
+                    resultArea.setText(Publisher.getList(false, null,
+                            (String)searchAttr.getSelectedItem(),
+                            searchValue.getText()));
                 }
                 //Show all publishers
                 else
                 {
-                    jTextArea1.setText(Publisher.getList());
+                    resultArea.setText(Publisher.getList());
                 }
             }
         }
 
         //----------------------Book--------------------------
-        else if(jRadioButton3.isSelected())
+        else if(bookRadButton.isSelected())
         {
             //If Ascending is selected and attribute to ascend by is specified
-            if (jRadioButton5.isSelected() && jComboBox1.getSelectedIndex() > 0)
+            if (sortAscRadButton.isSelected() && sortAttr.getSelectedIndex() > 0)
             {
                 //Sort All Books
-                if (jComboBox2.getSelectedIndex() == 0 ||
-                        jTextField3.getText().isEmpty())
+                if (searchAttr.getSelectedIndex() == 0 ||
+                        searchValue.getText().isEmpty())
                 {
-                    jTextArea1.setText(Book.getList(true,
-                            (String)jComboBox1.getSelectedItem(), null, null));
+                    resultArea.setText(Book.getList(true,
+                            (String)sortAttr.getSelectedItem(), null, null));
                 }
 
                 //Sort Books that fall under the query
                 else
                 {
-                    jTextArea1.setText(Book.getList(true,
-                            (String)jComboBox1.getSelectedItem(),
-                            (String)jComboBox2.getSelectedItem(),
-                            jTextField3.getText()));
+                    resultArea.setText(Book.getList(true,
+                            (String)sortAttr.getSelectedItem(),
+                            (String)searchAttr.getSelectedItem(),
+                            searchValue.getText()));
                 }
             }
 
             //If Descending is selected and attribute to descend by is specified
-            else if (jRadioButton6.isSelected()
-                    && jComboBox1.getSelectedIndex() > 0)
+            else if (sortDescRadButton.isSelected()
+                    && sortAttr.getSelectedIndex() > 0)
             {
                 //Sort All Books
-                if (jComboBox2.getSelectedIndex() == 0
-                        || jTextField3.getText().isEmpty())
+                if (searchAttr.getSelectedIndex() == 0
+                        || searchValue.getText().isEmpty())
                 {
-                    jTextArea1.setText(Book.getList(false,
-                            (String)jComboBox1.getSelectedItem(), null, null));
+                    resultArea.setText(Book.getList(false,
+                            (String)sortAttr.getSelectedItem(), null, null));
                 }
 
                 //Sort Books that fall under the query
                 else
                 {
-                    jTextArea1.setText(Book.getList(false,
-                            (String)jComboBox1.getSelectedItem(),
-                            (String)jComboBox2.getSelectedItem(),
-                            jTextField3.getText()));
+                    resultArea.setText(Book.getList(false,
+                            (String)sortAttr.getSelectedItem(),
+                            (String)searchAttr.getSelectedItem(),
+                            searchValue.getText()));
                 }
             }
 
 
-            else if (!jRadioButton5.isSelected() && !jRadioButton6.isSelected()
-                    || jComboBox1.getSelectedIndex() == 0)
+            else if (!sortAscRadButton.isSelected() && !sortDescRadButton.isSelected()
+                    || sortAttr.getSelectedIndex() == 0)
             {
                 //Show authors that fall under query, but no sorting specified
-                if (jComboBox2.getSelectedIndex() > 0
-                        && !jTextField3.getText().isEmpty())
+                if (searchAttr.getSelectedIndex() > 0
+                        && !searchValue.getText().isEmpty())
                 {
-                    jTextArea1.setText(Book.getList(false, null,
-                            (String)jComboBox2.getSelectedItem(),
-                            jTextField3.getText()));
+                    resultArea.setText(Book.getList(false, null,
+                            (String)searchAttr.getSelectedItem(),
+                            searchValue.getText()));
                 }
                 //Show all authors
                 else
                 {
-                    jTextArea1.setText(Book.getList());
+                    resultArea.setText(Book.getList());
                 }
             }
         }
 
         //----------------------Genre--------------------------
-        else if(jRadioButton4.isSelected())
+        else if(genreRadButton.isSelected())
         {
             //If Ascending is selected and attribute to ascend by is specified
-            if (jRadioButton5.isSelected() && jComboBox1.getSelectedIndex() > 0)
+            if (sortAscRadButton.isSelected() && sortAttr.getSelectedIndex() > 0)
             {
                 //Sort All Genres
-                if (jComboBox2.getSelectedIndex() == 0 ||
-                        jTextField3.getText().isEmpty())
+                if (searchAttr.getSelectedIndex() == 0 ||
+                        searchValue.getText().isEmpty())
                 {
-                    jTextArea1.setText(Genre.getList(true,
-                            (String)jComboBox1.getSelectedItem(), null, null));
+                    resultArea.setText(Genre.getList(true,
+                            (String)sortAttr.getSelectedItem(), null, null));
                 }
 
                 //Sort Genres that fall under the query
                 else
                 {
-                    jTextArea1.setText(Genre.getList(true,
-                            (String)jComboBox1.getSelectedItem(),
-                            (String)jComboBox2.getSelectedItem(),
-                            jTextField3.getText()));
+                    resultArea.setText(Genre.getList(true,
+                            (String)sortAttr.getSelectedItem(),
+                            (String)searchAttr.getSelectedItem(),
+                            searchValue.getText()));
                 }
             }
 
             //If Descending is selected and attribute to descend by is specified
-            else if (jRadioButton6.isSelected()
-                    && jComboBox1.getSelectedIndex() > 0)
+            else if (sortDescRadButton.isSelected()
+                    && sortAttr.getSelectedIndex() > 0)
             {
                 //Sort All Genres
-                if (jComboBox2.getSelectedIndex() == 0
-                        || jTextField3.getText().isEmpty())
+                if (searchAttr.getSelectedIndex() == 0
+                        || searchValue.getText().isEmpty())
                 {
-                    jTextArea1.setText(Genre.getList(false,
-                            (String)jComboBox1.getSelectedItem(), null, null));
+                    resultArea.setText(Genre.getList(false,
+                            (String)sortAttr.getSelectedItem(), null, null));
                 }
 
                 //Sort Genres that fall under the query
                 else
                 {
-                    jTextArea1.setText(Genre.getList(false,
-                            (String)jComboBox1.getSelectedItem(),
-                            (String)jComboBox2.getSelectedItem(),
-                            jTextField3.getText()));
+                    resultArea.setText(Genre.getList(false,
+                            (String)sortAttr.getSelectedItem(),
+                            (String)searchAttr.getSelectedItem(),
+                            searchValue.getText()));
                 }
             }
 
 
-            else if (!jRadioButton5.isSelected() && !jRadioButton6.isSelected()
-                    || jComboBox1.getSelectedIndex() == 0)
+            else if (!sortAscRadButton.isSelected() && !sortDescRadButton.isSelected()
+                    || sortAttr.getSelectedIndex() == 0)
             {
                 //Show Genres that fall under query, but no sorting specified
-                if (jComboBox2.getSelectedIndex() > 0
-                        && !jTextField3.getText().isEmpty())
+                if (searchAttr.getSelectedIndex() > 0
+                        && !searchValue.getText().isEmpty())
                 {
-                    jTextArea1.setText(Genre.getList(false, null,
-                            (String)jComboBox2.getSelectedItem(),
-                            jTextField3.getText()));
+                    resultArea.setText(Genre.getList(false, null,
+                            (String)searchAttr.getSelectedItem(),
+                            searchValue.getText()));
                 }
                 //Show all Genres
                 else
                 {
-                    jTextArea1.setText(Genre.getList());
+                    resultArea.setText(Genre.getList());
                 }
             }
         }}
@@ -500,83 +500,83 @@ public class Form extends javax.swing.JFrame
 
             JOptionPane.showMessageDialog(rootPane, ex);
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_queryButtonActionPerformed
 
-   private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jRadioButton1ActionPerformed
-   {//GEN-HEADEREND:event_jRadioButton1ActionPerformed
+   private void authorRadButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_authorRadButtonActionPerformed
+   {//GEN-HEADEREND:event_authorRadButtonActionPerformed
       //if Author is selected
-      if(jRadioButton1.isSelected())
+      if(authorRadButton.isSelected())
       {
-         jComboBox1.setEditable(true);
-         jComboBox1.removeAllItems();
-         jComboBox1.addItem("");
-         jComboBox1.addItem("id");
-         jComboBox1.addItem("firstname");
-         jComboBox1.addItem("lastname");
+         sortAttr.setEditable(true);
+         sortAttr.removeAllItems();
+         sortAttr.addItem("");
+         sortAttr.addItem("id");
+         sortAttr.addItem("firstname");
+         sortAttr.addItem("lastname");
 
-         jComboBox2.setEditable(true);
-         jComboBox2.removeAllItems();
-         jComboBox2.addItem("");
-         jComboBox2.addItem("firstname");
-         jComboBox2.addItem("lastname");
+         searchAttr.setEditable(true);
+         searchAttr.removeAllItems();
+         searchAttr.addItem("");
+         searchAttr.addItem("firstname");
+         searchAttr.addItem("lastname");
       }
-   }//GEN-LAST:event_jRadioButton1ActionPerformed
+   }//GEN-LAST:event_authorRadButtonActionPerformed
 
-   private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jRadioButton2ActionPerformed
-   {//GEN-HEADEREND:event_jRadioButton2ActionPerformed
+   private void publisherRadButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_publisherRadButtonActionPerformed
+   {//GEN-HEADEREND:event_publisherRadButtonActionPerformed
       //If Publishers is selected
-      if(jRadioButton2.isSelected())
+      if(publisherRadButton.isSelected())
       {
-         jComboBox1.setEditable(true);
-         jComboBox1.removeAllItems();
-         jComboBox1.addItem("");
-         jComboBox1.addItem("id");
-         jComboBox1.addItem("name");
+         sortAttr.setEditable(true);
+         sortAttr.removeAllItems();
+         sortAttr.addItem("");
+         sortAttr.addItem("id");
+         sortAttr.addItem("name");
 
-         jComboBox2.setEditable(true);
-         jComboBox2.removeAllItems();
-         jComboBox2.addItem("");
-         jComboBox2.addItem("name");
+         searchAttr.setEditable(true);
+         searchAttr.removeAllItems();
+         searchAttr.addItem("");
+         searchAttr.addItem("name");
       }
-   }//GEN-LAST:event_jRadioButton2ActionPerformed
+   }//GEN-LAST:event_publisherRadButtonActionPerformed
 
-   private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jRadioButton3ActionPerformed
-   {//GEN-HEADEREND:event_jRadioButton3ActionPerformed
+   private void bookRadButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_bookRadButtonActionPerformed
+   {//GEN-HEADEREND:event_bookRadButtonActionPerformed
       //if books is selected
-      if(jRadioButton3.isSelected())
+      if(bookRadButton.isSelected())
       {
-         jComboBox1.setEditable(true);
-         jComboBox1.removeAllItems();
-         jComboBox1.addItem("");
-         jComboBox1.addItem("id");
-         jComboBox1.addItem("publishedDate");
-         jComboBox1.addItem("title");
+         sortAttr.setEditable(true);
+         sortAttr.removeAllItems();
+         sortAttr.addItem("");
+         sortAttr.addItem("id");
+         sortAttr.addItem("publishedDate");
+         sortAttr.addItem("title");
 
-         jComboBox2.setEditable(true);
-         jComboBox2.removeAllItems();
-         jComboBox2.addItem("");
-         jComboBox2.addItem("publishedDate");
-         jComboBox2.addItem("title");
+         searchAttr.setEditable(true);
+         searchAttr.removeAllItems();
+         searchAttr.addItem("");
+         searchAttr.addItem("publishedDate");
+         searchAttr.addItem("title");
       }
-   }//GEN-LAST:event_jRadioButton3ActionPerformed
+   }//GEN-LAST:event_bookRadButtonActionPerformed
 
-   private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jRadioButton4ActionPerformed
-   {//GEN-HEADEREND:event_jRadioButton4ActionPerformed
+   private void genreRadButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_genreRadButtonActionPerformed
+   {//GEN-HEADEREND:event_genreRadButtonActionPerformed
       //if genres is selected
-      if(jRadioButton4.isSelected())
+      if(genreRadButton.isSelected())
       {
-         jComboBox1.setEditable(true);
-         jComboBox1.removeAllItems();
-         jComboBox1.addItem("");
-         jComboBox1.addItem("id");
-         jComboBox1.addItem("genreName");
+         sortAttr.setEditable(true);
+         sortAttr.removeAllItems();
+         sortAttr.addItem("");
+         sortAttr.addItem("id");
+         sortAttr.addItem("genreName");
 
-         jComboBox2.setEditable(true);
-         jComboBox2.removeAllItems();
-         jComboBox2.addItem("");
-         jComboBox2.addItem("genreName");
+         searchAttr.setEditable(true);
+         searchAttr.removeAllItems();
+         searchAttr.addItem("");
+         searchAttr.addItem("genreName");
       }
-   }//GEN-LAST:event_jRadioButton4ActionPerformed
+   }//GEN-LAST:event_genreRadButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -628,27 +628,27 @@ public class Form extends javax.swing.JFrame
     }
 
    // Variables declaration - do not modify//GEN-BEGIN:variables
+   private javax.swing.JRadioButton authorRadButton;
+   private javax.swing.JRadioButton bookRadButton;
    private javax.swing.ButtonGroup buttonGroup1;
    private javax.swing.ButtonGroup buttonGroup2;
-   private javax.swing.JButton jButton1;
-   private javax.swing.JComboBox jComboBox1;
-   private javax.swing.JComboBox jComboBox2;
-   private javax.swing.JLabel jLabel1;
-   private javax.swing.JLabel jLabel2;
-   private javax.swing.JLabel jLabel3;
-   private javax.swing.JLabel jLabel4;
-   private javax.swing.JLabel jLabel5;
-   private javax.swing.JLabel jLabel6;
-   private javax.swing.JLabel jLabel7;
-   private javax.swing.JLabel jLabel8;
-   private javax.swing.JRadioButton jRadioButton1;
-   private javax.swing.JRadioButton jRadioButton2;
-   private javax.swing.JRadioButton jRadioButton3;
-   private javax.swing.JRadioButton jRadioButton4;
-   private javax.swing.JRadioButton jRadioButton5;
-   private javax.swing.JRadioButton jRadioButton6;
+   private javax.swing.JRadioButton genreRadButton;
    private javax.swing.JScrollPane jScrollPane1;
-   private javax.swing.JTextArea jTextArea1;
-   private javax.swing.JTextField jTextField3;
+   private javax.swing.JLabel libTitle;
+   private javax.swing.JLabel outputLabel;
+   private javax.swing.JRadioButton publisherRadButton;
+   private javax.swing.JButton queryButton;
+   private javax.swing.JLabel queryByLabel;
+   private javax.swing.JTextArea resultArea;
+   private javax.swing.JComboBox searchAttr;
+   private javax.swing.JLabel searchAttrLabel;
+   private javax.swing.JLabel searchByLabel;
+   private javax.swing.JTextField searchValue;
+   private javax.swing.JLabel searchValueLabel;
+   private javax.swing.JRadioButton sortAscRadButton;
+   private javax.swing.JComboBox sortAttr;
+   private javax.swing.JLabel sortAttrLabel;
+   private javax.swing.JLabel sortByLabel;
+   private javax.swing.JRadioButton sortDescRadButton;
    // End of variables declaration//GEN-END:variables
 }
