@@ -286,7 +286,7 @@ public class Book
     {
         Session session = HibernateContext.getSession();
         Criteria criteria = session.createCriteria(Book.class);
-        criteria.addOrder(Order.asc("title"));
+        criteria.addOrder(Order.asc("id"));
 
         List<Book> books = criteria.list();
         System.out.println("All books:");
@@ -307,9 +307,10 @@ public class Book
     }
 
    /**
-    This method gets the list by default and sorts by id.
-    @return list: a list of strings that will appear in the text area to show
-            search or query results
+    * List the books and authors sorted by id.
+    * Almost equivalent to list(), but instead of printing, returns as a string 
+    * for use in GUI Form.
+    * @return Formatted string of books sorted by id.
     */
     public static String getList()
    {
@@ -334,6 +335,18 @@ public class Book
       return list;
    }
 
+    /**
+    * Lists books given specific ordering schema and selection conditions.
+    * @param typeToggle 1 to order by ascending, 0 to order by descending. 
+    * @param attribute the attribute of book to order by. No sorting done if 
+    * null or invalid attribute input. (e.g. publishedDate)
+    * @param findAttribute the attribute of book to be selected from. (e.g. title).
+    * If null or invalid attribute, no selection is done.
+    * @param findValue the value of the attribute to be searched for. (e.g. "Algebra").
+    * If null or invalid value, no selection is done.
+    * @return Formated string of books and associated information given
+    * by sorting type and selection.
+    */
    public static String getList(boolean typeToggle, String attribute,
                                         String findAttribute, String findValue)
    {

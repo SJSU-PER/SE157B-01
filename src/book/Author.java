@@ -143,13 +143,13 @@ public class Author
    }
 
    /**
-    List the titles by author sorted by first name.
+    List the titles by author sorted by id.
    */
    public static void list()
    {
       Session session = HibernateContext.getSession();
       Criteria criteria = session.createCriteria(Author.class);
-      criteria.addOrder(Order.asc("firstname"));
+      criteria.addOrder(Order.asc("id"));
 
       List<Author> authors = criteria.list();
       System.out.println("Titles that are written by Author.");
@@ -168,6 +168,12 @@ public class Author
       }
    }
 
+   /**
+    * List the titles by author sorted by id.
+    * Almost equivalent to list(), but instead of printing, returns as a string 
+    * for use in GUI Form.
+    * @return Formatted string of authors sorted by id.
+    */
    public static String getList()
    {
       String list = "";
@@ -192,6 +198,18 @@ public class Author
       return list;
    }
 
+   /**
+    * Lists authors given specific ordering schema and selection conditions.
+    * @param typeToggle 1 to order by ascending, 0 to order by descending. 
+    * @param attribute the attribute of author to order by. No sorting done if 
+    * null or invalid attribute input. (e.g. firstname)
+    * @param findAttribute the attribute of author to be selected from. (e.g. lastname).
+    * If null or invalid attribute, no selection is done.
+    * @param findValue the value of the attribute to be searched for. (e.g. "king").
+    * If null or invalid value, no selection is done.
+    * @return Formated string of authors and associated information given
+    * by sorting type and selection.
+    */
    public static String getList(boolean typeToggle, String attribute,
                                     String findAttribute, String findValue)
    {
