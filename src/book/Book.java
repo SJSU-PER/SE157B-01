@@ -39,7 +39,7 @@ public class Book
    private String title;
    private List<Author> authors = new ArrayList<>();
    private List<Genre> genres = new ArrayList<>();
-   private ISBN isbn;
+   private static ISBN isbn;
    private Publisher publisher;
    private String publishedDate;
 
@@ -311,14 +311,14 @@ public class Book
       Session session = HibernateContext.getSession();
       Criteria criteria = session.createCriteria(Book.class);
       criteria.addOrder(Order.asc("id"));
-      
+
       List<Book> books = criteria.list();
       list += "All Books:";
-      
+
       for (Book book : books)
       {
-         list+= "\n \n" + book.getId() + ". " + book.getTitle() + " " + 
-                 book.getPublishedDate() + " " + book.getIsbn();
+         list+= "\n \n" + book.getId() + ". " + book.getTitle() + " | Year:" +
+                 book.getPublishedDate() + " | Isbn:" + isbn.getISBNNumber();
          for (Author author : book.getAuthors())
          {
             list+= "\n" + author.getFirstname() + " " + author.getLastname();
@@ -326,13 +326,13 @@ public class Book
       }
       return list;
    }
-   
+
    public static String getList(boolean typeToggle, String attribute, String findAttribute, String findValue)
    {
       String list = "";
       Session session = HibernateContext.getSession();
       Criteria criteria = session.createCriteria(Book.class);
-      
+
       //Do only if ordering was specified
       if (attribute != null)
       {
@@ -345,19 +345,19 @@ public class Book
           criteria.addOrder(Order.desc(attribute));
         }
       }
-      
+
       //Do only selection was specified
       if (findAttribute != null && findValue != null)
       {
           criteria.add(Restrictions.like(findAttribute,"%"+findValue+"%"));
       }
-      
+
       List<Book> books = criteria.list();
       list += "All Books:";
-      
+
       for (Book book : books)
       {
-         list+= "\n \n" + book.getId() + ". " + book.getTitle() + " " + 
+         list+= "\n \n" + book.getId() + ". " + book.getTitle() + " " +
                  book.getPublishedDate() + " " + book.getIsbn();
          for (Author author : book.getAuthors())
          {
@@ -366,7 +366,7 @@ public class Book
       }
       return list;
    }
-   
+
     /**
      Prints the id, title, year, isbn number, and name of publishers for that
      book.
