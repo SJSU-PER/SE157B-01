@@ -14,11 +14,6 @@ import org.hibernate.QueryException;
  */
 public class Form extends javax.swing.JFrame
 {
-
-    private static final String HELP_MESSAGE =
-        "*** Commands: create, load, find <n>, add, delete, quit\n"+
-        "***           books, authors, publishers, genres";
-
     public Form()
     {
         initComponents();
@@ -239,7 +234,8 @@ public class Form extends javax.swing.JFrame
                     && sortAttr.getSelectedIndex() > 0)
             {
                 //Sort All Authors
-                if (searchAttr.getSelectedIndex() == 0 || searchValue.getText().isEmpty())
+                if (searchAttr.getSelectedIndex() == 0
+                        || searchValue.getText().isEmpty())
                 {
                     resultArea.setText(Author.getList(true,
                             (String)sortAttr.getSelectedItem(), null, null));
@@ -278,7 +274,8 @@ public class Form extends javax.swing.JFrame
             }
 
 
-            else if (!sortAscRadButton.isSelected() && !sortDescRadButton.isSelected()
+            else if (!sortAscRadButton.isSelected()
+                    && !sortDescRadButton.isSelected()
                     || sortAttr.getSelectedIndex() == 0)
             {
                 //Show authors that fall under query, but no sorting specified
@@ -345,7 +342,8 @@ public class Form extends javax.swing.JFrame
             }
 
 
-            else if (!sortAscRadButton.isSelected() && !sortDescRadButton.isSelected()
+            else if (!sortAscRadButton.isSelected()
+                    && !sortDescRadButton.isSelected()
                     || sortAttr.getSelectedIndex() == 0)
             {
                 //Show publishers that fall under query, but no sorting specified
@@ -411,7 +409,8 @@ public class Form extends javax.swing.JFrame
             }
 
 
-            else if (!sortAscRadButton.isSelected() && !sortDescRadButton.isSelected()
+            else if (!sortAscRadButton.isSelected()
+                    && !sortDescRadButton.isSelected()
                     || sortAttr.getSelectedIndex() == 0)
             {
                 //Show authors that fall under query, but no sorting specified
@@ -477,7 +476,8 @@ public class Form extends javax.swing.JFrame
             }
 
 
-            else if (!sortAscRadButton.isSelected() && !sortDescRadButton.isSelected()
+            else if (!sortAscRadButton.isSelected()
+                    && !sortDescRadButton.isSelected()
                     || sortAttr.getSelectedIndex() == 0)
             {
                 //Show Genres that fall under query, but no sorting specified
