@@ -30,13 +30,13 @@ import org.hibernate.criterion.Restrictions;
 @Entity
 public class Genre
 {
-   private String genreName;
+   private String name;
    private long id;
    private List<Book> books = new ArrayList<>();
 
    public Genre(String genreName)
    {
-      this.genreName = genreName;
+      this.name = genreName;
    }
 
    public Genre()
@@ -59,12 +59,12 @@ public class Genre
    @Column(name="genre_name")
    public String getGenreName()
    {
-      return genreName;
+      return name;
    }
 
    public void setGenreName(String genreName)
    {
-      this.genreName = genreName;
+      this.name = genreName;
    }
 
    @ManyToMany
@@ -219,6 +219,6 @@ public class Genre
    */
    private void print()
    {
-      System.out.printf("%d: %s \n", id, genreName);
+      System.out.printf("%d: %s \n", id, name);
    }
 }
