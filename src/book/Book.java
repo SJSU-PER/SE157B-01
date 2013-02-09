@@ -364,7 +364,8 @@ public class Book
                  book.getPublishedDate() + " | ISBN: " + isbn.getISBNNumber();
          for (Author author : book.getAuthors())
          {
-            list+= "\n" + author.getFirstname() + " " + author.getLastname();
+            list+= "\n        " + author.getFirstname() + " "
+                    + author.getLastname();
          }
       }
       return list;

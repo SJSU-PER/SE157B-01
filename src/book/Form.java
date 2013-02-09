@@ -96,7 +96,8 @@ public class Form extends javax.swing.JFrame
       jRadioButton5.setText("Ascending");
 
       buttonGroup2.add(jRadioButton6);
-      jRadioButton6.setText("Decending");
+      jRadioButton6.setText("Descending");
+      jRadioButton6.setActionCommand("Descending");
 
       jTextField1.addActionListener(new java.awt.event.ActionListener()
       {

@@ -230,7 +230,8 @@
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
           <ComponentRef name="buttonGroup2"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Decending"/>
+        <Property name="text" type="java.lang.String" value="Descending"/>
+        <Property name="actionCommand" type="java.lang.String" value="Descending"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField1">
