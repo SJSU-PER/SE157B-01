@@ -167,8 +167,8 @@ public class Genre
          list+= "\n \n" + genre.getId() + ". " + genre.getGenreName();
          for (Book books : genre.getBooks())
          {
-            list+= "\n          " + books.getTitle() + " "
-                    + books.getPublishedDate();
+            list+= "\n          " + books.getTitle() + " ("
+                    + books.getPublishedDate() + ")";
          }
       }
       return list;
@@ -208,7 +208,8 @@ public class Genre
          list+= "\n \n" + genre.getId() + ". " + genre.getGenreName();
          for (Book books : genre.getBooks())
          {
-            list+= "\n" + books.getTitle() + " " + books.getPublishedDate();
+            list+= "\n" + books.getTitle() + " ("
+                    + books.getPublishedDate() + ")";
          }
       }
       return list;
