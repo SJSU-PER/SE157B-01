@@ -457,7 +457,6 @@ public class Form extends javax.swing.JFrame
          jComboBox2.setEditable(true);
          jComboBox2.removeAllItems();
          jComboBox2.addItem("");
-         jComboBox2.addItem("id");
          jComboBox2.addItem("firstname");
          jComboBox2.addItem("lastname");
       }
@@ -477,7 +476,6 @@ public class Form extends javax.swing.JFrame
          jComboBox2.setEditable(true);
          jComboBox2.removeAllItems();
          jComboBox2.addItem("");
-         jComboBox2.addItem("id");
          jComboBox2.addItem("name");
       }
    }//GEN-LAST:event_jRadioButton2ActionPerformed
@@ -497,7 +495,6 @@ public class Form extends javax.swing.JFrame
          jComboBox2.setEditable(true);
          jComboBox2.removeAllItems();
          jComboBox2.addItem("");
-         jComboBox2.addItem("id");
          jComboBox2.addItem("publishedDate");
          jComboBox2.addItem("title");
       }
@@ -517,7 +514,6 @@ public class Form extends javax.swing.JFrame
          jComboBox2.setEditable(true);
          jComboBox2.removeAllItems();
          jComboBox2.addItem("");
-         jComboBox2.addItem("id");
          jComboBox2.addItem("genreName");
       }
    }//GEN-LAST:event_jRadioButton4ActionPerformed
