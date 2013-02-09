@@ -209,7 +209,7 @@ public class Publisher
          list+= "\n \n" + pub.getId() + ". " + pub.getName();
          for (Book books : pub.getBooks())
          {
-            list+= "\n" + books.getTitle() + " ("
+            list+= "\n       " + books.getTitle() + " ("
                     + books.getPublishedDate() + ")";
          }
       }

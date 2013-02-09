@@ -1,15 +1,16 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package book;
 
 import javax.swing.JOptionPane;
 import org.hibernate.QueryException;
 
 /**
- *
- * @author sonic_000
+ @author Team Cosmos:
+         Erni Ali,
+         Phil Vaca,
+         Randy Zaatri
+
+ Solution for CS157B Project #1
+ Form.java is a class that handles the GUI version of the application.
  */
 public class Form extends javax.swing.JFrame
 {
@@ -96,6 +97,14 @@ public class Form extends javax.swing.JFrame
 
       buttonGroup2.add(jRadioButton6);
       jRadioButton6.setText("Decending");
+
+      jTextField1.addActionListener(new java.awt.event.ActionListener()
+      {
+         public void actionPerformed(java.awt.event.ActionEvent evt)
+         {
+            jTextField1ActionPerformed(evt);
+         }
+      });
 
       jLabel5.setText("Attribute:");
 
@@ -412,6 +421,11 @@ public class Form extends javax.swing.JFrame
             JOptionPane.showMessageDialog(rootPane, ex);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+   private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jTextField1ActionPerformed
+   {//GEN-HEADEREND:event_jTextField1ActionPerformed
+      // TODO add your handling code here:
+   }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -208,7 +208,7 @@ public class Genre
          list+= "\n \n" + genre.getId() + ". " + genre.getGenreName();
          for (Book books : genre.getBooks())
          {
-            list+= "\n" + books.getTitle() + " ("
+            list+= "\n       " + books.getTitle() + " ("
                     + books.getPublishedDate() + ")";
          }
       }
