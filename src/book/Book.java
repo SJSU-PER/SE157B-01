@@ -306,7 +306,12 @@ public class Book
         }
     }
 
-   public static String getList()
+   /**
+    This method gets the list by default and sorts by id.
+    @return list: a list of strings that will appear in the text area to show
+            search or query results
+    */
+    public static String getList()
    {
       String list = "";
       Session session = HibernateContext.getSession();

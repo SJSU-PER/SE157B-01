@@ -11,7 +11,7 @@ import java.io.InputStreamReader;
          Randy Zaatri
 
  Solution for CS157B Project #1
- BookDemo.java is a class with the main class. 
+ BookDemo.java is a class with the main class.
  */
 public class BookDemo
 {
@@ -50,12 +50,6 @@ public class BookDemo
                Genre.load();
                Book.load();
             }
-//            else if (command.equalsIgnoreCase("add")) {
-//                Student.add();
-//            }
-//            else if (command.equalsIgnoreCase("delete")) {
-//                Student.delete();
-//            }
             else if (command.equalsIgnoreCase("publishers")) {
                 Publisher.list();
             }
@@ -68,21 +62,6 @@ public class BookDemo
             else if (command.equalsIgnoreCase("genres")) {
                 Genre.list();
             }
-            /*else if (parts[0].equalsIgnoreCase("find") &&
-                    (parts.length >= 2)) {
-                long id = Long.parseLong(parts[1]);
-                Student student = Student.find(id);
-
-                // Because the Student object is fetched from the database,
-                // we can access its fields only within a session.
-                // Otherwise, we'll get a LazyInitializationException.
-                if (student != null) {
-                    student.printInSession();
-                }
-                else {
-                    System.out.printf("*** No student with id %d\n", id);
-                }
-            }*/
             else if (!command.equalsIgnoreCase("quit")) {
                 System.out.println(HELP_MESSAGE);
             }
