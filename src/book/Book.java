@@ -333,7 +333,7 @@ public class Book
 
     /**
     * Lists books given specific ordering schema and selection conditions.
-    * @param typeToggle 1 to order by ascending, 0 to order by descending.
+    * @param typeToggle true to order by ascending, false to order by descending.
     * @param attribute the attribute of book to order by. No sorting done if
     * null or invalid attribute input. (e.g. publishedDate)
     * @param findAttribute the attribute of book to be selected from. (e.g. title).

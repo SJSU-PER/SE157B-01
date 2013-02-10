@@ -233,7 +233,7 @@ public class Form extends javax.swing.JFrame
             if (sortAscRadButton.isSelected()
                     && sortAttr.getSelectedIndex() > 0)
             {
-                //Sort All Authors
+                //If selection not specified, sort all authors with no selection
                 if (searchAttr.getSelectedIndex() == 0
                         || searchValue.getText().isEmpty())
                 {
@@ -241,7 +241,7 @@ public class Form extends javax.swing.JFrame
                             (String)sortAttr.getSelectedItem(), null, null));
                 }
 
-                //Sort Authors that fall under the query
+                //If selection specified, sort all authors with specification
                 else
                 {
                     resultArea.setText(Author.getList(true,
@@ -255,7 +255,7 @@ public class Form extends javax.swing.JFrame
             else if (sortDescRadButton.isSelected()
                     && sortAttr.getSelectedIndex() > 0)
             {
-                //Sort All Authors
+                //If selection not specified, sort all authors with no selection
                 if (searchAttr.getSelectedIndex() == 0
                         || searchValue.getText().isEmpty())
                 {
@@ -263,7 +263,7 @@ public class Form extends javax.swing.JFrame
                             (String)sortAttr.getSelectedItem(), null, null));
                 }
 
-                //Sort Authors that fall under the query
+                //If selection specified, sort all authors with specification
                 else
                 {
                     resultArea.setText(Author.getList(false,
@@ -273,12 +273,12 @@ public class Form extends javax.swing.JFrame
                 }
             }
 
-
+            //If neither ascending/descending and attribute not specified
             else if (!sortAscRadButton.isSelected()
                     && !sortDescRadButton.isSelected()
                     || sortAttr.getSelectedIndex() == 0)
             {
-                //Show authors that fall under query, but no sorting specified
+                //Show authors that fall under selection, but no sorting specified
                 if (searchAttr.getSelectedIndex() > 0
                         && !searchValue.getText().isEmpty())
                 {
@@ -286,7 +286,8 @@ public class Form extends javax.swing.JFrame
                             (String)searchAttr.getSelectedItem(),
                             searchValue.getText()));
                 }
-                //Show all authors
+                
+                //Show authors with no selection or sorting
                 else
                 {
                     resultArea.setText(Author.getList());
@@ -301,7 +302,7 @@ public class Form extends javax.swing.JFrame
             //If Ascending is selected and attribute to ascend by is specified
             if (sortAscRadButton.isSelected() && sortAttr.getSelectedIndex() > 0)
             {
-                //Sort All Publishers
+                //If selection not specified, sort all publishers with no selection
                 if (searchAttr.getSelectedIndex() == 0
                         || searchValue.getText().isEmpty())
                 {
@@ -309,7 +310,7 @@ public class Form extends javax.swing.JFrame
                             (String)sortAttr.getSelectedItem(), null, null));
                 }
 
-                //Sort Publishers that fall under the query
+                //If selection specified, sort all publishers with specification
                 else
                 {
                     resultArea.setText(Publisher.getList(true,
@@ -323,7 +324,7 @@ public class Form extends javax.swing.JFrame
             else if (sortDescRadButton.isSelected()
                     && sortAttr.getSelectedIndex() > 0)
             {
-                //Sort All Publishers
+                //If selection not specified, sort all publishers with no selection
                 if (searchAttr.getSelectedIndex() == 0
                         || searchValue.getText().isEmpty())
                 {
@@ -331,7 +332,7 @@ public class Form extends javax.swing.JFrame
                             (String)sortAttr.getSelectedItem(), null, null));
                 }
 
-                //Sort Publishers that fall under the query
+                //If selection specified, sort all publishers with specification
                 else
                 {
                     resultArea.setText(Publisher.getList(false,
@@ -341,12 +342,12 @@ public class Form extends javax.swing.JFrame
                 }
             }
 
-
+            //If neither ascending/descending and attribute not specified
             else if (!sortAscRadButton.isSelected()
                     && !sortDescRadButton.isSelected()
                     || sortAttr.getSelectedIndex() == 0)
             {
-                //Show publishers that fall under query, but no sorting specified
+                //Show publishers that fall under selection, but no sorting specified
                 if (searchAttr.getSelectedIndex() > 0
                         && !searchValue.getText().isEmpty())
                 {
@@ -354,7 +355,7 @@ public class Form extends javax.swing.JFrame
                             (String)searchAttr.getSelectedItem(),
                             searchValue.getText()));
                 }
-                //Show all publishers
+                //Show all publishers with no sorting or selection
                 else
                 {
                     resultArea.setText(Publisher.getList());
@@ -368,7 +369,7 @@ public class Form extends javax.swing.JFrame
             //If Ascending is selected and attribute to ascend by is specified
             if (sortAscRadButton.isSelected() && sortAttr.getSelectedIndex() > 0)
             {
-                //Sort All Books
+                //If selection not specified, sort all books with no selection
                 if (searchAttr.getSelectedIndex() == 0 ||
                         searchValue.getText().isEmpty())
                 {
@@ -376,7 +377,7 @@ public class Form extends javax.swing.JFrame
                             (String)sortAttr.getSelectedItem(), null, null));
                 }
 
-                //Sort Books that fall under the query
+                //If selection specified, sort all books with specification
                 else
                 {
                     resultArea.setText(Book.getList(true,
@@ -390,7 +391,7 @@ public class Form extends javax.swing.JFrame
             else if (sortDescRadButton.isSelected()
                     && sortAttr.getSelectedIndex() > 0)
             {
-                //Sort All Books
+                //If selection not specified, sort all books with no selection
                 if (searchAttr.getSelectedIndex() == 0
                         || searchValue.getText().isEmpty())
                 {
@@ -398,7 +399,7 @@ public class Form extends javax.swing.JFrame
                             (String)sortAttr.getSelectedItem(), null, null));
                 }
 
-                //Sort Books that fall under the query
+                //If selection specified, sort all books with specification
                 else
                 {
                     resultArea.setText(Book.getList(false,
@@ -408,12 +409,12 @@ public class Form extends javax.swing.JFrame
                 }
             }
 
-
+            //If neither ascending/descending and attribute not specified
             else if (!sortAscRadButton.isSelected()
                     && !sortDescRadButton.isSelected()
                     || sortAttr.getSelectedIndex() == 0)
             {
-                //Show authors that fall under query, but no sorting specified
+                //Show books that fall under selection, but no sorting specified
                 if (searchAttr.getSelectedIndex() > 0
                         && !searchValue.getText().isEmpty())
                 {
@@ -421,7 +422,7 @@ public class Form extends javax.swing.JFrame
                             (String)searchAttr.getSelectedItem(),
                             searchValue.getText()));
                 }
-                //Show all authors
+                //Show all books without sorting/selection
                 else
                 {
                     resultArea.setText(Book.getList());
@@ -435,7 +436,7 @@ public class Form extends javax.swing.JFrame
             //If Ascending is selected and attribute to ascend by is specified
             if (sortAscRadButton.isSelected() && sortAttr.getSelectedIndex() > 0)
             {
-                //Sort All Genres
+                //If selection not specified, sort all genres with no selection
                 if (searchAttr.getSelectedIndex() == 0 ||
                         searchValue.getText().isEmpty())
                 {
@@ -443,7 +444,7 @@ public class Form extends javax.swing.JFrame
                             (String)sortAttr.getSelectedItem(), null, null));
                 }
 
-                //Sort Genres that fall under the query
+                //If selection specified, sort all genres with specification
                 else
                 {
                     resultArea.setText(Genre.getList(true,
@@ -457,7 +458,7 @@ public class Form extends javax.swing.JFrame
             else if (sortDescRadButton.isSelected()
                     && sortAttr.getSelectedIndex() > 0)
             {
-                //Sort All Genres
+                //If selection not specified, sort all genres with no selection
                 if (searchAttr.getSelectedIndex() == 0
                         || searchValue.getText().isEmpty())
                 {
@@ -465,7 +466,7 @@ public class Form extends javax.swing.JFrame
                             (String)sortAttr.getSelectedItem(), null, null));
                 }
 
-                //Sort Genres that fall under the query
+                //If selection specified, sort all genres with specification
                 else
                 {
                     resultArea.setText(Genre.getList(false,
@@ -475,12 +476,12 @@ public class Form extends javax.swing.JFrame
                 }
             }
 
-
+            //If neither ascending/descending and attribute not specified
             else if (!sortAscRadButton.isSelected()
                     && !sortDescRadButton.isSelected()
                     || sortAttr.getSelectedIndex() == 0)
             {
-                //Show Genres that fall under query, but no sorting specified
+                //Show genres that fall under selection, but no sorting specified
                 if (searchAttr.getSelectedIndex() > 0
                         && !searchValue.getText().isEmpty())
                 {
@@ -488,7 +489,7 @@ public class Form extends javax.swing.JFrame
                             (String)searchAttr.getSelectedItem(),
                             searchValue.getText()));
                 }
-                //Show all Genres
+                //Show all Genres without sorting or selection
                 else
                 {
                     resultArea.setText(Genre.getList());
