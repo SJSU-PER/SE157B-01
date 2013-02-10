@@ -192,8 +192,9 @@ public class Author
          for (Book books : author.getBooks())
          {
 
-            list+= "\n       " + books.getTitle() + " ("
-                    + books.getPublishedDate() + ")";
+            list+= "\n       " + books.getTitle() + " | Year: "
+                    + books.getPublishedDate() + " "
+                    + " |  ISBN13: " + books.getIsbn();;
          }
       }
       session.close();
@@ -248,8 +249,9 @@ public class Author
          for (Book books : author.getBooks())
          {
 
-            list+= "\n      " + books.getTitle() + " ("
-                    + books.getPublishedDate() + ")";
+            list+= "\n       " + books.getTitle() + " | Year: "
+                    + books.getPublishedDate() + " "
+                    + " |  ISBN13: " + books.getIsbn();;
          }
       }
       session.close();

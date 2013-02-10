@@ -365,7 +365,7 @@ public class Book
       for (Book book : books)
       {
          list+= "\n \n" + book.getId() + ". " + book.getTitle() + " | Year: " +
-                 book.getPublishedDate() + " | ISBN: " + book.getIsbn();
+                 book.getPublishedDate() + " | ISBN13: " + book.getIsbn();
          for (Author author : book.getAuthors())
          {
             list+= "\n        " + author.getFirstname() + " "
@@ -420,7 +420,7 @@ public class Book
       for (Book book : books)
       {
          list+= "\n \n" + book.getId() + ". " + book.getTitle() + " | Year: " +
-                 book.getPublishedDate() + " | ISBN: " + book.getIsbn();
+                 book.getPublishedDate() + " | ISBN13: " + book.getIsbn();
          for (Author author : book.getAuthors())
          {
             list+= "\n        " + author.getFirstname() + " "

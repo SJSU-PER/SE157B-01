@@ -174,8 +174,9 @@ public class Publisher
          list+= "\n \n" + pub.getId() + ". " + pub.getName();
          for (Book books : pub.getBooks())
          {
-            list+= "\n       " + books.getTitle() + " ("
-                    + books.getPublishedDate() + ")";
+            list+= "\n       " + books.getTitle() + " | Year: "
+                    + books.getPublishedDate() + " "
+                    + " |  ISBN13: " + books.getIsbn();
          }
       }
       session.close();
@@ -229,8 +230,9 @@ public class Publisher
          list+= "\n \n" + pub.getId() + ". " + pub.getName();
          for (Book books : pub.getBooks())
          {
-            list+= "\n       " + books.getTitle() + " ("
-                    + books.getPublishedDate() + ")";
+            list+= "\n       " + books.getTitle() + " | Year: "
+                    + books.getPublishedDate() + " "
+                    + " |  ISBN13: " + books.getIsbn();
          }
       }
       session.close();
