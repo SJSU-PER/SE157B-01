@@ -146,14 +146,7 @@ public class Book
     {
         Session session = HibernateContext.getSession();
 
-        //Find publishers
-        Publisher pb = Publisher.find("Pocket Books");
-        Publisher pearson = Publisher.find("Pearson");
-        Publisher prentice = Publisher.find("Prentice Hall");
-        Publisher gb = Publisher.find("Gallery Books");
-        Publisher dales = Publisher.find("Dales Large Print Books");
-        Publisher randomHouse = Publisher.find("Random House Digital, Inc");
-
+        //Initiate all the new books
         Book bagOfBones = new Book("Bag of Bones", "2008",
                   new ISBN("9781451678628"));
         Book lostHorizon =  (new Book("Lost Horizon", "1933",
@@ -173,32 +166,23 @@ public class Book
         Book salem = (new Book("Salem's Lot", "1975",
                   new ISBN("9780307743671")));
 
+        //Find publishers
+        Publisher pb = Publisher.find("Pocket Books");
+        Publisher pearson = Publisher.find("Pearson");
+        Publisher prentice = Publisher.find("Prentice Hall");
+        Publisher gb = Publisher.find("Gallery Books");
+        Publisher dales = Publisher.find("Dales Large Print Books");
+        Publisher randomHouse = Publisher.find("Random House Digital, Inc");
+
         //set the publishers of a book.
-//        Book bagOfBones = find("Bag of Bones");
         bagOfBones.setPublisher(pb);
-
-//        Book lostHorizon = find("Lost Horizon");
         lostHorizon.setPublisher(pb);
-
-//        Book bambi = find("Bambi: A Life in the Woods");
         bambi.setPublisher(pb);
-
-//        Book databaseSystems = find("Database Systems, the Complete Book");
         databaseSystems.setPublisher(pearson);
-
-//        Book mathBook = find("Algebra: Tools for a Changing World");
         mathBook.setPublisher(prentice);
-
-//        Book under = find("Under the Dome");
         under.setPublisher(gb);
-
-//        Book murder = find("Murder at School");
         murder.setPublisher(dales);
-
-//        Book shining = find("The Shining");
         shining.setPublisher(gb);
-
-//        Book salem = find("Salem's Lot");
         salem.setPublisher(randomHouse);
 
         //Find the authors.
@@ -269,35 +253,6 @@ public class Book
 
         System.out.println("Book table loaded.");
     }
-
-    public static void loadBook()
-    {
-       Session session = HibernateContext.getSession();
-       Transaction tx = session.beginTransaction();
-       {
-          session.save(new Book("Bag of Bones", "2008",
-                  new ISBN("9781451678628")));
-          session.save(new Book("Lost Horizon", "1933",
-                  new ISBN("9781453239766")));
-          session.save(new Book("Bambi: A Life in the Woods", "1923",
-                  new ISBN("9780671666071")));
-          session.save(new Book("Database Systems, the Complete Book",
-                  "2008", new ISBN("9780131873254")));
-          session.save(new Book("Algebra: Tools for a Changing World", "1998",
-                  new ISBN("9780134330693")));
-          session.save(new Book("Under the Dome", "2009",
-                  new ISBN("9781476735474")));
-          session.save(new Book("Murder at School", "2002",
-                  new ISBN("9781842622001")));
-          session.save(new Book("The Shining", "1977",
-                  new ISBN("9780307743657")));
-          session.save(new Book("Salem's Lot", "1975",
-                  new ISBN("9780307743671")));
-       }
-       tx.commit();
-       session.close();
-    }
-
 
      /**
      * Fetch the book with a matching title.
