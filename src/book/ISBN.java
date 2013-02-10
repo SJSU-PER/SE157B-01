@@ -51,4 +51,9 @@ public class ISBN
    {
       this.id = id;
    }
+
+   public String toString()
+   {
+      return ISBNNumber;
+   }
 }
