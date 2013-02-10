@@ -39,7 +39,7 @@ public class Book
    private String title;
    private List<Author> authors = new ArrayList<>();
    private List<Genre> genres = new ArrayList<>();
-   private static ISBN isbn;
+   private ISBN isbn;
    private Publisher publisher;
    private String publishedDate;
 
@@ -94,7 +94,7 @@ public class Book
       this.id = id;
    }
 
-   @OneToOne(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+   @OneToOne(cascade=CascadeType.ALL, fetch= FetchType.LAZY)
    @JoinColumn(name="isbn_id")
    public ISBN getIsbn()
    {
@@ -154,41 +154,51 @@ public class Book
         Publisher dales = Publisher.find("Dales Large Print Books");
         Publisher randomHouse = Publisher.find("Random House Digital, Inc");
 
-        //set the publishers of a book.
         Book bagOfBones = new Book("Bag of Bones", "2008",
-                   new ISBN("9781451678628"));
+                  new ISBN("9781451678628"));
+        Book lostHorizon =  (new Book("Lost Horizon", "1933",
+                  new ISBN("9781453239766")));
+        Book bambi = new Book("Bambi: A Life in the Woods", "1923",
+                  new ISBN("9780671666071"));
+        Book databaseSystems = (new Book("Database Systems, the Complete Book",
+                  "2008", new ISBN("9780131873254")));
+        Book mathBook = (new Book("Algebra: Tools for a Changing World", "1998",
+                  new ISBN("9780134330693")));
+        Book under = (new Book("Under the Dome", "2009",
+                  new ISBN("9781476735474")));
+        Book murder = (new Book("Murder at School", "2002",
+                  new ISBN("9781842622001")));
+        Book shining = (new Book("The Shining", "1977",
+                  new ISBN("9780307743657")));
+        Book salem = (new Book("Salem's Lot", "1975",
+                  new ISBN("9780307743671")));
+
+        //set the publishers of a book.
+//        Book bagOfBones = find("Bag of Bones");
         bagOfBones.setPublisher(pb);
 
-        Book lostHorizon = new Book("Lost Horizon", "1933",
-                new ISBN("9781453239766"));
+//        Book lostHorizon = find("Lost Horizon");
         lostHorizon.setPublisher(pb);
 
-        Book bambi = new Book("Bambi: A Life in the Woods", "1923",
-                new ISBN("9780671666071"));
+//        Book bambi = find("Bambi: A Life in the Woods");
         bambi.setPublisher(pb);
 
-        Book databaseSystems = new Book("Database Systems, the Complete Book",
-                "2008", new ISBN("9780131873254"));
+//        Book databaseSystems = find("Database Systems, the Complete Book");
         databaseSystems.setPublisher(pearson);
 
-        Book mathBook = new Book("Algebra: Tools for a Changing World", "1998",
-                new ISBN("9780134330693"));
+//        Book mathBook = find("Algebra: Tools for a Changing World");
         mathBook.setPublisher(prentice);
 
-        Book under = new Book("Under the Dome", "2009",
-                new ISBN("9781476735474"));
+//        Book under = find("Under the Dome");
         under.setPublisher(gb);
 
-        Book murder = new Book("Murder at School", "2002",
-                new ISBN("9781842622001"));
+//        Book murder = find("Murder at School");
         murder.setPublisher(dales);
 
-        Book shining = new Book("The Shining", "1977",
-                new ISBN("9780307743657"));
+//        Book shining = find("The Shining");
         shining.setPublisher(gb);
 
-        Book salem = new Book("Salem's Lot", "1975",
-                new ISBN("9780307743671"));
+//        Book salem = find("Salem's Lot");
         salem.setPublisher(randomHouse);
 
         //Find the authors.
@@ -260,6 +270,35 @@ public class Book
         System.out.println("Book table loaded.");
     }
 
+    public static void loadBook()
+    {
+       Session session = HibernateContext.getSession();
+       Transaction tx = session.beginTransaction();
+       {
+          session.save(new Book("Bag of Bones", "2008",
+                  new ISBN("9781451678628")));
+          session.save(new Book("Lost Horizon", "1933",
+                  new ISBN("9781453239766")));
+          session.save(new Book("Bambi: A Life in the Woods", "1923",
+                  new ISBN("9780671666071")));
+          session.save(new Book("Database Systems, the Complete Book",
+                  "2008", new ISBN("9780131873254")));
+          session.save(new Book("Algebra: Tools for a Changing World", "1998",
+                  new ISBN("9780134330693")));
+          session.save(new Book("Under the Dome", "2009",
+                  new ISBN("9781476735474")));
+          session.save(new Book("Murder at School", "2002",
+                  new ISBN("9781842622001")));
+          session.save(new Book("The Shining", "1977",
+                  new ISBN("9780307743657")));
+          session.save(new Book("Salem's Lot", "1975",
+                  new ISBN("9780307743671")));
+       }
+       tx.commit();
+       session.close();
+    }
+
+
      /**
      * Fetch the book with a matching title.
      * @param title the title to match.
@@ -304,11 +343,12 @@ public class Book
                        author.getLastname());
             }
         }
+        session.close();
     }
 
    /**
     * List the books and authors sorted by id.
-    * Almost equivalent to list(), but instead of printing, returns as a string 
+    * Almost equivalent to list(), but instead of printing, returns as a string
     * for use in GUI Form.
     * @return Formatted string of books sorted by id.
     */
@@ -325,20 +365,21 @@ public class Book
       for (Book book : books)
       {
          list+= "\n \n" + book.getId() + ". " + book.getTitle() + " | Year: " +
-                 book.getPublishedDate() + " | ISBN: " + isbn.getISBNNumber();
+                 book.getPublishedDate(); //+ " | ISBN: " + isbn.getISBNNumber();
          for (Author author : book.getAuthors())
          {
             list+= "\n        " + author.getFirstname() + " "
                     + author.getLastname();
          }
       }
+      session.close();
       return list;
    }
 
     /**
     * Lists books given specific ordering schema and selection conditions.
-    * @param typeToggle 1 to order by ascending, 0 to order by descending. 
-    * @param attribute the attribute of book to order by. No sorting done if 
+    * @param typeToggle 1 to order by ascending, 0 to order by descending.
+    * @param attribute the attribute of book to order by. No sorting done if
     * null or invalid attribute input. (e.g. publishedDate)
     * @param findAttribute the attribute of book to be selected from. (e.g. title).
     * If null or invalid attribute, no selection is done.
@@ -379,13 +420,14 @@ public class Book
       for (Book book : books)
       {
          list+= "\n \n" + book.getId() + ". " + book.getTitle() + " | Year: " +
-                 book.getPublishedDate() + " | ISBN: " + isbn.getISBNNumber();
+                 book.getPublishedDate();// + " | ISBN: " + isbn.getISBNNumber();
          for (Author author : book.getAuthors())
          {
             list+= "\n        " + author.getFirstname() + " "
                     + author.getLastname();
          }
       }
+      session.close();
       return list;
    }
 

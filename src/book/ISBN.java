@@ -42,7 +42,7 @@ public class ISBN
 
    @Id
    @GeneratedValue
-   @Column(name="isbn_id")
+   @Column(name="id")
    public long getId()
    {
       return id;

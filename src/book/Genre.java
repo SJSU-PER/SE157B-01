@@ -150,11 +150,12 @@ public class Genre
                     books.getPublishedDate());
          }
       }
+      session.close();
    }
 
    /**
     * List the genre and associated books sorted by id.
-    * Almost equivalent to list(), but instead of printing, returns as a string 
+    * Almost equivalent to list(), but instead of printing, returns as a string
     * for use in GUI Form.
     * @return Formatted string of books sorted by id.
     */
@@ -177,14 +178,15 @@ public class Genre
                     + books.getPublishedDate() + ")";
          }
       }
+      session.close();
       return list;
    }
 
-   
+
    /**
     * Lists genres given specific ordering schema and selection conditions.
-    * @param typeToggle 1 to order by ascending, 0 to order by descending. 
-    * @param attribute the attribute of genre to order by. No sorting done if 
+    * @param typeToggle 1 to order by ascending, 0 to order by descending.
+    * @param attribute the attribute of genre to order by. No sorting done if
     * null or invalid attribute input. (e.g. genreName)
     * @param findAttribute the attribute of book to be selected from. (e.g. genreName).
     * If null or invalid attribute, no selection is done.
@@ -231,6 +233,7 @@ public class Genre
                     + books.getPublishedDate() + ")";
          }
       }
+      session.close();
       return list;
    }
 

@@ -149,11 +149,12 @@ public class Publisher
 
          }
       }
+      session.close();
    }
 
    /**
     * List the publishers and published books sorted by id.
-    * Almost equivalent to list(), but instead of printing, returns as a string 
+    * Almost equivalent to list(), but instead of printing, returns as a string
     * for use in GUI Form.
     * @return Formatted string of publishers sorted by id.
     */
@@ -177,13 +178,14 @@ public class Publisher
                     + books.getPublishedDate() + ")";
          }
       }
+      session.close();
       return list;
    }
 
    /**
     * Lists publishers given specific ordering schema and selection conditions.
-    * @param typeToggle 1 to order by ascending, 0 to order by descending. 
-    * @param attribute the attribute of publisher to order by. No sorting done if 
+    * @param typeToggle 1 to order by ascending, 0 to order by descending.
+    * @param attribute the attribute of publisher to order by. No sorting done if
     * null or invalid attribute input. (e.g. name)
     * @param findAttribute the attribute of publisher to be selected from. (e.g. name).
     * If null or invalid attribute, no selection is done.
@@ -231,6 +233,7 @@ public class Publisher
                     + books.getPublishedDate() + ")";
          }
       }
+      session.close();
       return list;
    }
    /**
